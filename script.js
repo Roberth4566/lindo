@@ -1,4 +1,3 @@
-```javascript
 /* ======================================== */
 /* 📱 NÚMERO WHATSAPP */
 /* ======================================== */
@@ -498,5 +497,4 @@ style.innerHTML = `
 `;
 
 document.head.appendChild(style);
-```
 
