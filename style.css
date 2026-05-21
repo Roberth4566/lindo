@@ -1,4 +1,3 @@
-```css
 /* ======================================== */
 /* 🌸 GOOGLE FONT */
 /* ======================================== */
@@ -22,7 +21,12 @@ html{
 
 body{
     background:
-    radial-gradient(circle at top,#1f1b3d 0%,#0c1022 45%,#060816 100%);
+    radial-gradient(circle at top,
+    #2b1d4a 0%,
+    #17142f 35%,
+    #0d1020 70%,
+    #060816 100%);
+
     color:white;
     overflow-x:hidden;
     position:relative;
@@ -51,6 +55,7 @@ body{
 }
 
 .stars::before{
+
     background-image:
     radial-gradient(2px 2px at 10% 20%, rgba(255,255,255,0.8), transparent),
     radial-gradient(2px 2px at 20% 70%, rgba(255,255,255,0.6), transparent),
@@ -63,11 +68,12 @@ body{
     radial-gradient(2px 2px at 90% 50%, rgba(255,255,255,0.6), transparent),
     radial-gradient(2px 2px at 15% 90%, rgba(255,255,255,0.8), transparent),
     radial-gradient(2px 2px at 85% 15%, rgba(255,255,255,0.7), transparent);
-    
+
     animation:twinkle 6s infinite alternate;
 }
 
 .stars2::before{
+
     background-image:
     radial-gradient(3px 3px at 12% 35%, rgba(255,139,194,0.5), transparent),
     radial-gradient(3px 3px at 22% 80%, rgba(255,139,194,0.4), transparent),
@@ -81,6 +87,7 @@ body{
 }
 
 @keyframes twinkle{
+
     from{
         opacity:0.35;
     }
@@ -88,6 +95,7 @@ body{
     to{
         opacity:1;
     }
+
 }
 
 /* ======================================== */
@@ -119,7 +127,7 @@ body{
 }
 
 /* ======================================== */
-/* 💖 CORAZONES FLOTANTES */
+/* 💖 CORAZONES */
 /* ======================================== */
 
 .floating{
@@ -193,14 +201,18 @@ footer{
 /* ======================================== */
 
 nav{
+
     position:fixed;
     top:0;
     left:0;
     width:100%;
+
     padding:22px 8%;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
+
     z-index:1000;
 
     background:rgba(10,10,30,0.35);
@@ -235,16 +247,25 @@ nav ul li a:hover{
 }
 
 .music-icon{
+
     width:48px;
     height:48px;
+
     border-radius:50%;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     background:rgba(255,255,255,0.08);
-    border:1px solid rgba(255,255,255,0.1);
+
+    border:
+    1px solid rgba(255,255,255,0.1);
+
     cursor:pointer;
+
     transition:0.3s;
+
     backdrop-filter:blur(10px);
 }
 
@@ -258,19 +279,19 @@ nav ul li a:hover{
 /* ======================================== */
 
 .hero{
+
     min-height:100vh;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     text-align:center;
+
     padding:160px 20px 120px;
 
-    background:
-    linear-gradient(rgba(6,8,22,0.78),rgba(6,8,22,0.88)),
-    url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop');
+    background:transparent;
 
-    background-size:cover;
-    background-position:center;
     overflow:hidden;
 }
 
@@ -285,12 +306,19 @@ nav ul li a:hover{
 }
 
 .floating-heart{
+
     position:absolute;
+
     right:8%;
     top:22%;
+
     font-size:160px;
-    color:rgba(255,139,194,0.12);
-    text-shadow:0 0 30px rgba(255,139,194,0.4);
+
+    color:rgba(255,139,194,0.10);
+
+    text-shadow:
+    0 0 30px rgba(255,139,194,0.35);
+
     animation:float 5s ease-in-out infinite;
 }
 
@@ -316,10 +344,35 @@ nav ul li a:hover{
     max-width:900px;
 }
 
+.hero-tag{
+
+    display:inline-block;
+
+    margin-bottom:25px;
+
+    padding:12px 28px;
+
+    border-radius:50px;
+
+    background:
+    rgba(255,255,255,0.06);
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(10px);
+
+    color:#ff9fcf;
+}
+
 .hero h1{
+
     font-size:72px;
+
     line-height:1.25;
+
     margin-bottom:28px;
+
     font-weight:800;
 }
 
@@ -333,21 +386,31 @@ nav ul li a:hover{
 }
 
 .hero p{
+
     font-size:22px;
+
     line-height:1.9;
+
     color:#e8e8e8;
+
     margin-bottom:50px;
 }
 
 .btn{
+
     display:inline-block;
+
     padding:18px 55px;
+
     border-radius:60px;
+
     background:
     linear-gradient(135deg,#ff9acb,#ff5ea8);
 
     color:white;
+
     text-decoration:none;
+
     font-weight:600;
 
     transition:0.35s;
@@ -357,7 +420,9 @@ nav ul li a:hover{
 }
 
 .btn:hover{
-    transform:translateY(-5px) scale(1.04);
+
+    transform:
+    translateY(-5px) scale(1.04);
 
     box-shadow:
     0 0 45px rgba(255,139,194,0.45);
@@ -373,12 +438,18 @@ nav ul li a:hover{
 }
 
 .section-line{
+
     width:130px;
     height:4px;
+
     background:#ff8bc2;
+
     margin:0 auto 60px;
+
     border-radius:50px;
-    box-shadow:0 0 20px rgba(255,139,194,0.5);
+
+    box-shadow:
+    0 0 20px rgba(255,139,194,0.5);
 }
 
 .moments-title{
@@ -401,13 +472,19 @@ nav ul li a:hover{
 /* ======================================== */
 
 .cards{
+
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+    repeat(4,minmax(0,1fr));
+
     gap:30px;
 }
 
 .card{
-    background:rgba(255,255,255,0.06);
+
+    background:
+    rgba(255,255,255,0.06);
 
     border:
     1px solid rgba(255,255,255,0.08);
@@ -434,6 +511,7 @@ nav ul li a:hover{
 }
 
 .card:hover{
+
     transform:translateY(-10px);
 
     box-shadow:
@@ -441,14 +519,20 @@ nav ul li a:hover{
 }
 
 .circle{
+
     width:82px;
     height:82px;
+
     border-radius:50%;
+
     background:#ff8bc2;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     font-size:32px;
+
     margin-bottom:28px;
 
     box-shadow:
@@ -456,9 +540,13 @@ nav ul li a:hover{
 }
 
 .card h3{
+
     font-size:23px;
+
     line-height:1.5;
+
     margin-bottom:18px;
+
     min-height:80px;
 
     display:flex;
@@ -467,9 +555,13 @@ nav ul li a:hover{
 }
 
 .card span{
+
     color:#dddddd;
+
     line-height:1.9;
+
     font-size:16px;
+
     flex:1;
 
     display:flex;
@@ -478,8 +570,11 @@ nav ul li a:hover{
 }
 
 .heart-small{
+
     margin-top:25px;
+
     font-size:24px;
+
     color:#ff8bc2;
 }
 
@@ -488,8 +583,11 @@ nav ul li a:hover{
 /* ======================================== */
 
 .question{
+
     padding:140px 20px;
+
     text-align:center;
+
     background:transparent;
 }
 
@@ -504,32 +602,63 @@ nav ul li a:hover{
 }
 
 .line-heart{
+
     font-size:26px;
+
     color:#ff8bc2;
+
     margin-bottom:45px;
 }
 
+.question-sub{
+
+    color:#d7d7d7;
+
+    margin-bottom:40px;
+
+    font-size:18px;
+
+    line-height:1.8;
+}
+
 .buttons{
+
     display:flex;
+
     justify-content:center;
+
     gap:25px;
+
     flex-wrap:wrap;
 }
 
 .buttons button{
+
     padding:18px 55px;
+
     border-radius:60px;
-    border:1px solid rgba(255,255,255,0.1);
-    background:rgba(255,255,255,0.06);
+
+    border:
+    1px solid rgba(255,255,255,0.1);
+
+    background:
+    rgba(255,255,255,0.06);
+
     color:white;
+
     font-size:19px;
+
     cursor:pointer;
+
     transition:0.35s;
+
     backdrop-filter:blur(10px);
 }
 
 .buttons button:hover{
+
     background:#ff8bc2;
+
     transform:scale(1.06);
 
     box-shadow:
@@ -537,7 +666,9 @@ nav ul li a:hover{
 }
 
 .question-text{
+
     margin-top:25px;
+
     color:#ff9fcf;
 }
 
@@ -551,7 +682,9 @@ nav ul li a:hover{
 }
 
 .music-box{
+
     max-width:1100px;
+
     margin:auto;
 
     padding:65px;
@@ -559,11 +692,7 @@ nav ul li a:hover{
     border-radius:40px;
 
     background:
-    linear-gradient(rgba(15,15,35,0.75),rgba(15,15,35,0.75)),
-    url('https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=1600&auto=format&fit=crop');
-
-    background-size:cover;
-    background-position:center;
+    rgba(255,255,255,0.05);
 
     border:
     1px solid rgba(255,255,255,0.08);
@@ -575,15 +704,22 @@ nav ul li a:hover{
 }
 
 .music-box h2{
+
     text-align:center;
+
     font-size:50px;
+
     margin-bottom:18px;
 }
 
 .music-subtitle{
+
     text-align:center;
+
     color:#ff9fcf;
+
     font-size:22px;
+
     margin-bottom:55px;
 }
 
@@ -592,7 +728,9 @@ nav ul li a:hover{
 /* ======================================== */
 
 .player{
-    background:rgba(255,255,255,0.05);
+
+    background:
+    rgba(255,255,255,0.05);
 
     border:
     1px solid rgba(255,255,255,0.08);
@@ -610,16 +748,22 @@ nav ul li a:hover{
 }
 
 .cover{
+
     width:145px;
     height:145px;
+
     border-radius:24px;
+
     overflow:hidden;
+
     flex-shrink:0;
 }
 
 .cover img{
+
     width:100%;
     height:100%;
+
     object-fit:cover;
 }
 
@@ -628,14 +772,20 @@ nav ul li a:hover{
 }
 
 .top-info{
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
+
     margin-bottom:22px;
 }
 
 .top-info h3{
+
     font-size:30px;
+
     margin-bottom:8px;
 }
 
@@ -644,54 +794,81 @@ nav ul li a:hover{
 }
 
 .heart-player{
+
     font-size:32px;
+
     color:#ff8bc2;
 }
 
 .bar{
+
     width:100%;
+
     height:7px;
+
     background:#3b3b52;
+
     border-radius:50px;
+
     overflow:hidden;
+
     margin-bottom:15px;
 }
 
 .progress{
+
     width:55%;
+
     height:100%;
+
     background:#ff8bc2;
 }
 
 .time{
+
     display:flex;
+
     justify-content:space-between;
+
     color:#d7d7d7;
+
     margin-bottom:28px;
 }
 
 .controls{
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
+
     gap:28px;
 }
 
 .controls span{
+
     font-size:30px;
+
     cursor:pointer;
+
     transition:0.3s;
 }
 
 .controls span:hover{
+
     color:#ff8bc2;
+
     transform:scale(1.08);
 }
 
 .play{
+
     width:72px;
     height:72px;
+
     border-radius:50%;
+
     background:#ff8bc2;
 
     display:flex;
@@ -707,9 +884,13 @@ nav ul li a:hover{
 /* ======================================== */
 
 footer{
+
     text-align:center;
+
     padding:55px 20px;
+
     color:#d7d7d7;
+
     background:transparent;
 }
 
