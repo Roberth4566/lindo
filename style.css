@@ -20,16 +20,20 @@ html{
 }
 
 body{
+
     background:
     radial-gradient(circle at top,
-    #2b1d4a 0%,
-    #17142f 35%,
-    #0d1020 70%,
-    #060816 100%);
+    #3d1f67 0%,
+    #241742 30%,
+    #14142b 65%,
+    #070b18 100%);
 
     color:white;
+
     overflow-x:hidden;
+
     position:relative;
+
     min-height:100vh;
 }
 
@@ -57,9 +61,9 @@ body{
 .stars::before{
 
     background-image:
-    radial-gradient(2px 2px at 10% 20%, rgba(255,255,255,0.8), transparent),
-    radial-gradient(2px 2px at 20% 70%, rgba(255,255,255,0.6), transparent),
-    radial-gradient(2px 2px at 30% 40%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(2px 2px at 10% 20%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(2px 2px at 20% 70%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(2px 2px at 30% 40%, rgba(255,255,255,0.8), transparent),
     radial-gradient(2px 2px at 40% 80%, rgba(255,255,255,0.6), transparent),
     radial-gradient(2px 2px at 50% 30%, rgba(255,255,255,0.8), transparent),
     radial-gradient(2px 2px at 60% 60%, rgba(255,255,255,0.7), transparent),
@@ -67,7 +71,9 @@ body{
     radial-gradient(2px 2px at 80% 75%, rgba(255,255,255,0.7), transparent),
     radial-gradient(2px 2px at 90% 50%, rgba(255,255,255,0.6), transparent),
     radial-gradient(2px 2px at 15% 90%, rgba(255,255,255,0.8), transparent),
-    radial-gradient(2px 2px at 85% 15%, rgba(255,255,255,0.7), transparent);
+    radial-gradient(2px 2px at 85% 15%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(2px 2px at 55% 10%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(2px 2px at 75% 55%, rgba(255,255,255,0.9), transparent);
 
     animation:twinkle 6s infinite alternate;
 }
@@ -75,13 +81,13 @@ body{
 .stars2::before{
 
     background-image:
-    radial-gradient(3px 3px at 12% 35%, rgba(255,139,194,0.5), transparent),
-    radial-gradient(3px 3px at 22% 80%, rgba(255,139,194,0.4), transparent),
-    radial-gradient(3px 3px at 35% 20%, rgba(255,139,194,0.5), transparent),
-    radial-gradient(3px 3px at 48% 65%, rgba(255,139,194,0.4), transparent),
-    radial-gradient(3px 3px at 62% 30%, rgba(255,139,194,0.5), transparent),
-    radial-gradient(3px 3px at 78% 55%, rgba(255,139,194,0.4), transparent),
-    radial-gradient(3px 3px at 92% 82%, rgba(255,139,194,0.5), transparent);
+    radial-gradient(4px 4px at 12% 35%, rgba(255,105,180,0.8), transparent),
+    radial-gradient(4px 4px at 22% 80%, rgba(255,120,200,0.7), transparent),
+    radial-gradient(4px 4px at 35% 20%, rgba(255,139,194,0.8), transparent),
+    radial-gradient(4px 4px at 48% 65%, rgba(255,110,210,0.7), transparent),
+    radial-gradient(4px 4px at 62% 30%, rgba(255,139,194,0.8), transparent),
+    radial-gradient(4px 4px at 78% 55%, rgba(255,120,220,0.7), transparent),
+    radial-gradient(4px 4px at 92% 82%, rgba(255,139,194,0.8), transparent);
 
     animation:twinkle 8s infinite alternate;
 }
@@ -89,7 +95,7 @@ body{
 @keyframes twinkle{
 
     from{
-        opacity:0.35;
+        opacity:0.4;
     }
 
     to{
@@ -111,19 +117,27 @@ body{
 }
 
 .glow1{
-    width:320px;
-    height:320px;
-    background:rgba(255,94,168,0.18);
-    top:-100px;
-    left:-100px;
+
+    width:400px;
+    height:400px;
+
+    background:
+    rgba(255,80,170,0.22);
+
+    top:-120px;
+    left:-120px;
 }
 
 .glow2{
-    width:360px;
-    height:360px;
-    background:rgba(186,120,255,0.15);
-    bottom:-120px;
-    right:-120px;
+
+    width:420px;
+    height:420px;
+
+    background:
+    rgba(170,120,255,0.18);
+
+    bottom:-140px;
+    right:-140px;
 }
 
 /* ======================================== */
@@ -131,12 +145,20 @@ body{
 /* ======================================== */
 
 .floating{
+
     position:fixed;
+
     bottom:-60px;
-    color:rgba(255,139,194,0.18);
+
+    color:
+    rgba(255,120,200,0.35);
+
     pointer-events:none;
+
     z-index:1;
-    animation:floatUp linear forwards;
+
+    animation:
+    floatUp linear forwards;
 }
 
 @keyframes floatUp{
@@ -162,9 +184,13 @@ body{
 /* ======================================== */
 
 .sparkle{
+
     position:fixed;
+
     z-index:1;
+
     pointer-events:none;
+
     animation:sparkleAnim 2s linear forwards;
 }
 
@@ -183,7 +209,7 @@ body{
 }
 
 /* ======================================== */
-/* 🌸 CONTENIDO ENCIMA */
+/* 🌸 CONTENIDO */
 /* ======================================== */
 
 nav,
@@ -203,8 +229,10 @@ footer{
 nav{
 
     position:fixed;
+
     top:0;
     left:0;
+
     width:100%;
 
     padding:22px 8%;
@@ -215,7 +243,12 @@ nav{
 
     z-index:1000;
 
-    background:rgba(10,10,30,0.35);
+    background:
+    linear-gradient(
+    to right,
+    rgba(255,80,170,0.15),
+    rgba(120,70,255,0.18)
+    );
 
     backdrop-filter:blur(18px);
 
@@ -224,25 +257,42 @@ nav{
 }
 
 .logo{
+
     font-size:25px;
+
     font-weight:700;
-    color:#ff9fcf;
+
+    color:#ffb4db;
+
+    text-shadow:
+    0 0 15px rgba(255,180,219,0.5);
 }
 
 nav ul{
+
     display:flex;
+
     gap:35px;
+
     list-style:none;
 }
 
 nav ul li a{
+
     text-decoration:none;
-    color:white;
+
+    color:#fff4fb;
+
     font-weight:500;
+
     transition:0.3s;
+
+    text-shadow:
+    0 0 10px rgba(255,255,255,0.2);
 }
 
 nav ul li a:hover{
+
     color:#ff9fcf;
 }
 
@@ -257,7 +307,8 @@ nav ul li a:hover{
     justify-content:center;
     align-items:center;
 
-    background:rgba(255,255,255,0.08);
+    background:
+    rgba(255,255,255,0.08);
 
     border:
     1px solid rgba(255,255,255,0.1);
@@ -270,7 +321,9 @@ nav ul li a:hover{
 }
 
 .music-icon:hover{
+
     background:#ff8bc2;
+
     transform:scale(1.08);
 }
 
@@ -296,12 +349,13 @@ nav ul li a:hover{
 }
 
 .overlay{
+
     position:absolute;
     inset:0;
 
     background:
     radial-gradient(circle at top right,
-    rgba(255,139,194,0.08),
+    rgba(255,139,194,0.10),
     transparent 40%);
 }
 
@@ -312,12 +366,12 @@ nav ul li a:hover{
     right:8%;
     top:22%;
 
-    font-size:160px;
+    font-size:170px;
 
-    color:rgba(255,139,194,0.10);
+    color:rgba(255,139,194,0.12);
 
     text-shadow:
-    0 0 30px rgba(255,139,194,0.35);
+    0 0 30px rgba(255,139,194,0.45);
 
     animation:float 5s ease-in-out infinite;
 }
@@ -362,7 +416,7 @@ nav ul li a:hover{
 
     backdrop-filter:blur(10px);
 
-    color:#ff9fcf;
+    color:#ffb4db;
 }
 
 .hero h1{
@@ -374,14 +428,22 @@ nav ul li a:hover{
     margin-bottom:28px;
 
     font-weight:800;
+
+    color:#ffffff;
+
+    text-shadow:
+    0 0 20px rgba(255,255,255,0.12);
 }
 
 .hero h1 span{
+
     color:#ff9fcf;
 }
 
 .mini-heart{
+
     font-size:34px;
+
     margin-bottom:22px;
 }
 
@@ -391,7 +453,7 @@ nav ul li a:hover{
 
     line-height:1.9;
 
-    color:#e8e8e8;
+    color:#f1f1f1;
 
     margin-bottom:50px;
 }
@@ -416,7 +478,7 @@ nav ul li a:hover{
     transition:0.35s;
 
     box-shadow:
-    0 0 35px rgba(255,139,194,0.25);
+    0 0 35px rgba(255,139,194,0.35);
 }
 
 .btn:hover{
@@ -425,7 +487,7 @@ nav ul li a:hover{
     translateY(-5px) scale(1.04);
 
     box-shadow:
-    0 0 45px rgba(255,139,194,0.45);
+    0 0 45px rgba(255,139,194,0.55);
 }
 
 /* ======================================== */
@@ -433,7 +495,9 @@ nav ul li a:hover{
 /* ======================================== */
 
 .moments{
+
     padding:130px 8%;
+
     background:transparent;
 }
 
@@ -449,22 +513,30 @@ nav ul li a:hover{
     border-radius:50px;
 
     box-shadow:
-    0 0 20px rgba(255,139,194,0.5);
+    0 0 20px rgba(255,139,194,0.6);
 }
 
 .moments-title{
+
     text-align:center;
+
     margin-bottom:80px;
 }
 
 .moments-title h2{
+
     font-size:54px;
+
     margin-bottom:15px;
+
+    color:#fff4fb;
 }
 
 .moments-title p{
+
     font-size:18px;
-    color:#d7d7d7;
+
+    color:#dfdfdf;
 }
 
 /* ======================================== */
@@ -507,7 +579,7 @@ nav ul li a:hover{
     transition:0.35s;
 
     box-shadow:
-    0 0 30px rgba(255,139,194,0.05);
+    0 0 30px rgba(255,139,194,0.08);
 }
 
 .card:hover{
@@ -515,7 +587,7 @@ nav ul li a:hover{
     transform:translateY(-10px);
 
     box-shadow:
-    0 0 35px rgba(255,139,194,0.18);
+    0 0 35px rgba(255,139,194,0.22);
 }
 
 .circle{
@@ -525,7 +597,8 @@ nav ul li a:hover{
 
     border-radius:50%;
 
-    background:#ff8bc2;
+    background:
+    linear-gradient(135deg,#ff8bc2,#ff5ea8);
 
     display:flex;
     justify-content:center;
@@ -536,7 +609,7 @@ nav ul li a:hover{
     margin-bottom:28px;
 
     box-shadow:
-    0 0 25px rgba(255,139,194,0.4);
+    0 0 25px rgba(255,139,194,0.5);
 }
 
 .card h3{
@@ -552,11 +625,13 @@ nav ul li a:hover{
     display:flex;
     align-items:center;
     justify-content:center;
+
+    color:#fff4fb;
 }
 
 .card span{
 
-    color:#dddddd;
+    color:#e7e7e7;
 
     line-height:1.9;
 
@@ -592,13 +667,19 @@ nav ul li a:hover{
 }
 
 .question-container{
+
     max-width:1000px;
+
     margin:auto;
 }
 
 .question h2{
+
     font-size:58px;
+
     margin-bottom:25px;
+
+    color:#fff4fb;
 }
 
 .line-heart{
@@ -612,7 +693,7 @@ nav ul li a:hover{
 
 .question-sub{
 
-    color:#d7d7d7;
+    color:#dddddd;
 
     margin-bottom:40px;
 
@@ -669,7 +750,7 @@ nav ul li a:hover{
 
     margin-top:25px;
 
-    color:#ff9fcf;
+    color:#ffb4db;
 }
 
 /* ======================================== */
@@ -677,19 +758,21 @@ nav ul li a:hover{
 /* ======================================== */
 
 .music{
-    padding:130px 8%;
+
+    padding:100px 8% 130px;
+
     background:transparent;
 }
 
 .music-box{
 
-    max-width:1100px;
+    max-width:900px;
 
     margin:auto;
 
-    padding:65px;
+    padding:45px;
 
-    border-radius:40px;
+    border-radius:35px;
 
     background:
     rgba(255,255,255,0.05);
@@ -700,27 +783,29 @@ nav ul li a:hover{
     backdrop-filter:blur(18px);
 
     box-shadow:
-    0 0 40px rgba(255,139,194,0.08);
+    0 0 40px rgba(255,139,194,0.10);
 }
 
 .music-box h2{
 
     text-align:center;
 
-    font-size:50px;
+    font-size:34px;
 
-    margin-bottom:18px;
+    margin-bottom:15px;
+
+    color:#fff4fb;
 }
 
 .music-subtitle{
 
     text-align:center;
 
-    color:#ff9fcf;
+    color:#ffb4db;
 
-    font-size:22px;
+    font-size:18px;
 
-    margin-bottom:55px;
+    margin-bottom:40px;
 }
 
 /* ======================================== */
@@ -730,29 +815,29 @@ nav ul li a:hover{
 .player{
 
     background:
-    rgba(255,255,255,0.05);
+    rgba(255,255,255,0.04);
 
     border:
-    1px solid rgba(255,255,255,0.08);
+    1px solid rgba(255,255,255,0.06);
 
     backdrop-filter:blur(15px);
 
-    border-radius:32px;
+    border-radius:28px;
 
-    padding:35px;
+    padding:25px;
 
     display:flex;
     align-items:center;
-    gap:30px;
+    gap:25px;
     flex-wrap:wrap;
 }
 
 .cover{
 
-    width:145px;
-    height:145px;
+    width:110px;
+    height:110px;
 
-    border-radius:24px;
+    border-radius:20px;
 
     overflow:hidden;
 
@@ -779,23 +864,28 @@ nav ul li a:hover{
 
     align-items:center;
 
-    margin-bottom:22px;
+    margin-bottom:18px;
 }
 
 .top-info h3{
 
-    font-size:30px;
+    font-size:24px;
 
-    margin-bottom:8px;
+    margin-bottom:6px;
+
+    color:#fff4fb;
 }
 
 .top-info p{
+
     color:#d7d7d7;
+
+    font-size:15px;
 }
 
 .heart-player{
 
-    font-size:32px;
+    font-size:28px;
 
     color:#ff8bc2;
 }
@@ -804,7 +894,7 @@ nav ul li a:hover{
 
     width:100%;
 
-    height:7px;
+    height:6px;
 
     background:#3b3b52;
 
@@ -812,7 +902,7 @@ nav ul li a:hover{
 
     overflow:hidden;
 
-    margin-bottom:15px;
+    margin-bottom:12px;
 }
 
 .progress{
@@ -832,7 +922,9 @@ nav ul li a:hover{
 
     color:#d7d7d7;
 
-    margin-bottom:28px;
+    margin-bottom:22px;
+
+    font-size:14px;
 }
 
 .controls{
@@ -843,12 +935,12 @@ nav ul li a:hover{
 
     align-items:center;
 
-    gap:28px;
+    gap:24px;
 }
 
 .controls span{
 
-    font-size:30px;
+    font-size:24px;
 
     cursor:pointer;
 
@@ -864,8 +956,8 @@ nav ul li a:hover{
 
 .play{
 
-    width:72px;
-    height:72px;
+    width:60px;
+    height:60px;
 
     border-radius:50%;
 
@@ -921,7 +1013,7 @@ footer p{
     }
 
     .music-box h2{
-        font-size:38px;
+        font-size:30px;
     }
 
 }
@@ -968,7 +1060,7 @@ footer p{
     }
 
     .music-box{
-        padding:35px 22px;
+        padding:30px 20px;
     }
 
     .player{
@@ -995,10 +1087,6 @@ footer p{
 
     .buttons button{
         width:100%;
-    }
-
-    .music-box h2{
-        font-size:30px;
     }
 
 }
