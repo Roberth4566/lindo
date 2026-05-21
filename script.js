@@ -1,16 +1,29 @@
-const numero = "593995296138";
+```javascript
+/* ======================================== */
+/* 📱 NÚMERO WHATSAPP */
+/* ======================================== */
+
+/* CAMBIA ESTE NÚMERO */
+const numero = "593999999999";
 
 /* ======================================== */
 /* 💬 BOTONES WHATSAPP */
 /* ======================================== */
 
-const btnNo = document.querySelector(".No");
-const btnObvio = document.querySelector(".obvio");
-const btnMaybe = document.querySelector(".maybe");
+const btnNo =
+document.querySelector(".No");
+
+const btnObvio =
+document.querySelector(".obvio");
+
+const btnMaybe =
+document.querySelector(".maybe");
+
+/* BOTÓN NO */
 
 if(btnNo){
 
-    btnNo.addEventListener("click", (e)=>{
+    btnNo.addEventListener("click",(e)=>{
 
         createExplosion(e);
 
@@ -22,9 +35,11 @@ if(btnNo){
 
 }
 
+/* BOTÓN OBVIO */
+
 if(btnObvio){
 
-    btnObvio.addEventListener("click", (e)=>{
+    btnObvio.addEventListener("click",(e)=>{
 
         createExplosion(e);
 
@@ -36,9 +51,11 @@ if(btnObvio){
 
 }
 
+/* BOTÓN TAL VEZ */
+
 if(btnMaybe){
 
-    btnMaybe.addEventListener("click", (e)=>{
+    btnMaybe.addEventListener("click",(e)=>{
 
         createExplosion(e);
 
@@ -51,39 +68,69 @@ if(btnMaybe){
 }
 
 /* ======================================== */
-/* 💖 CORAZONES FLOTANDO */
+/* 💖 MUCHOS CORAZONES FLOTANTES */
 /* ======================================== */
 
 function createHeart(){
 
-    const heart = document.createElement("div");
+    const heart =
+    document.createElement("div");
 
     heart.classList.add("floating");
 
-    heart.innerHTML = "💖";
+    /* DIFERENTES CORAZONES */
 
-    /* POSICIÓN MÁS LIMPIA */
+    const hearts = [
+        "💖",
+        "💕",
+        "💗",
+        "💞",
+        "💘",
+        "🌸"
+    ];
+
+    heart.innerHTML =
+    hearts[Math.floor(Math.random()*hearts.length)];
+
+    /* POSICIÓN */
+
     heart.style.left =
     Math.random() * 100 + "vw";
 
-    /* QUE NO SALGAN ARRIBA */
-    heart.style.bottom = "-40px";
+    heart.style.bottom = "-50px";
 
-    /* DURACIÓN MÁS SUAVE */
+    /* DURACIÓN */
+
     heart.style.animationDuration =
-    (Math.random() * 6 + 8) + "s";
+    (Math.random() * 5 + 6) + "s";
 
     /* TAMAÑO */
+
     heart.style.fontSize =
-    (Math.random() * 14 + 14) + "px";
+    (Math.random() * 22 + 18) + "px";
 
     /* OPACIDAD */
+
     heart.style.opacity =
-    (Math.random() * 0.4 + 0.15);
+    (Math.random() * 0.5 + 0.4);
 
     /* ROTACIÓN */
+
     heart.style.transform =
-    `rotate(${Math.random() * 360}deg)`;
+    `rotate(${Math.random()*360}deg)`;
+
+    /* COLOR MÁS VIVO */
+
+    const colors = [
+        "#ff4fa3",
+        "#ff7ac3",
+        "#ff94d2",
+        "#ff5ea8",
+        "#ff3d96"
+    ];
+
+    heart.style.color =
+    colors[Math.floor(Math.random()*colors.length)];
 
     document.body.appendChild(heart);
 
@@ -91,12 +138,13 @@ function createHeart(){
 
         heart.remove();
 
-    },14000);
+    },12000);
 
 }
 
-/* MENOS CORAZONES */
-setInterval(createHeart,2200);
+/* MUCHOS MÁS CORAZONES */
+
+setInterval(createHeart,500);
 
 /* ======================================== */
 /* ✨ ESTRELLITAS */
@@ -118,10 +166,10 @@ function createSparkle(){
     Math.random()*100 + "vh";
 
     sparkle.style.fontSize =
-    (Math.random()*10+10)+"px";
+    (Math.random()*12+10)+"px";
 
     sparkle.style.opacity =
-    (Math.random()*0.5+0.3);
+    (Math.random()*0.5+0.4);
 
     document.body.appendChild(sparkle);
 
@@ -133,10 +181,12 @@ function createSparkle(){
 
 }
 
-setInterval(createSparkle,3000);
+/* MÁS ESTRELLAS */
+
+setInterval(createSparkle,1800);
 
 /* ======================================== */
-/* ✨ EXPLOSIÓN BOTONES */
+/* 💥 EXPLOSIÓN BOTONES */
 /* ======================================== */
 
 function createExplosion(event){
@@ -144,27 +194,38 @@ function createExplosion(event){
     const x = event.clientX;
     const y = event.clientY;
 
-    for(let i=0;i<18;i++){
+    for(let i=0;i<25;i++){
 
         const sparkle =
         document.createElement("span");
 
         sparkle.classList.add("sparkle");
 
-        sparkle.innerHTML = "💖";
+        const emojis = [
+            "💖",
+            "💕",
+            "💗",
+            "✨"
+        ];
+
+        sparkle.innerHTML =
+        emojis[Math.floor(Math.random()*emojis.length)];
 
         sparkle.style.position = "fixed";
 
         sparkle.style.left =
-        (x + (Math.random() * 120 - 60)) + "px";
+        (x + (Math.random()*140 - 70)) + "px";
 
         sparkle.style.top =
-        (y + (Math.random() * 120 - 60)) + "px";
+        (y + (Math.random()*140 - 70)) + "px";
 
         sparkle.style.fontSize =
-        (Math.random()*20+10)+"px";
+        (Math.random()*22+12)+"px";
 
-        sparkle.style.pointerEvents = "none";
+        sparkle.style.pointerEvents =
+        "none";
+
+        sparkle.style.zIndex = "9999";
 
         document.body.appendChild(sparkle);
 
@@ -182,14 +243,14 @@ function createExplosion(event){
 /* 🎵 MÚSICA AUTOMÁTICA */
 /* ======================================== */
 
-window.addEventListener("load", ()=>{
+window.addEventListener("load",()=>{
 
     const music =
     document.getElementById("music");
 
     if(music){
 
-        music.volume = 0.4;
+        music.volume = 0.45;
 
         music.play().then(()=>{
 
@@ -197,7 +258,9 @@ window.addEventListener("load", ()=>{
 
         }).catch(()=>{
 
-            console.log("Autoplay bloqueado");
+            console.log(
+            "Autoplay bloqueado"
+            );
 
         });
 
@@ -206,10 +269,10 @@ window.addEventListener("load", ()=>{
 });
 
 /* ======================================== */
-/* 📱 SI EL CELULAR BLOQUEA AUTOPLAY */
+/* 📱 SI CELULAR BLOQUEA */
 /* ======================================== */
 
-document.body.addEventListener("click", ()=>{
+document.body.addEventListener("click",()=>{
 
     const music =
     document.getElementById("music");
@@ -233,7 +296,7 @@ document.querySelector(".music-icon");
 
 if(musicBtn){
 
-    musicBtn.addEventListener("click", ()=>{
+    musicBtn.addEventListener("click",()=>{
 
         const music =
         document.getElementById("music");
@@ -295,10 +358,10 @@ function stopMusicAnimation(){
 }
 
 /* ======================================== */
-/* ✨ EFECTO SCROLL SUAVE */
+/* ✨ EFECTO SCROLL */
 /* ======================================== */
 
-window.addEventListener("scroll", ()=>{
+window.addEventListener("scroll",()=>{
 
     const scroll =
     window.scrollY;
@@ -320,18 +383,6 @@ window.addEventListener("scroll", ()=>{
 
         glow2.style.transform =
         `translateY(-${scroll * 0.04}px)`;
-
-    }
-
-    /* PARALLAX HERO */
-
-    const hero =
-    document.querySelector(".hero");
-
-    if(hero){
-
-        hero.style.backgroundPositionY =
-        `${scroll * 0.3}px`;
 
     }
 
@@ -379,16 +430,47 @@ cards.forEach((card)=>{
 });
 
 /* ======================================== */
-/* ✨ EFECTO AL ENTRAR */
+/* ✨ EFECTO ENTRADA */
 /* ======================================== */
 
-window.addEventListener("load", ()=>{
+window.addEventListener("load",()=>{
+
+    document.body.style.opacity = "0";
 
     setTimeout(()=>{
 
+        document.body.style.transition =
+        "1.2s";
+
         document.body.style.opacity = "1";
 
-    },300);
+    },200);
+
+});
+
+/* ======================================== */
+/* ✨ EFECTO NAVBAR */
+/* ======================================== */
+
+window.addEventListener("scroll",()=>{
+
+    const nav =
+    document.querySelector("nav");
+
+    if(window.scrollY > 40){
+
+        nav.style.background =
+        "rgba(15,15,35,0.75)";
+
+        nav.style.backdropFilter =
+        "blur(20px)";
+
+    }else{
+
+        nav.style.background =
+        "rgba(10,10,30,0.35)";
+
+    }
 
 });
 
@@ -396,7 +478,8 @@ window.addEventListener("load", ()=>{
 /* ✨ CSS EXTRA DESDE JS */
 /* ======================================== */
 
-const style = document.createElement("style");
+const style =
+document.createElement("style");
 
 style.innerHTML = `
 
@@ -415,3 +498,5 @@ style.innerHTML = `
 `;
 
 document.head.appendChild(style);
+```
+
