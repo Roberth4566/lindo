@@ -46,14 +46,21 @@ function createHeart(){
 
     heart.innerHTML = "💖";
 
+    /* POSICIÓN ALEATORIA */
     heart.style.left =
     Math.random() * 100 + "vw";
 
+    /* DURACIÓN */
     heart.style.animationDuration =
-    (Math.random() * 5 + 5) + "s";
+    (Math.random() * 6 + 6) + "s";
 
+    /* TAMAÑO */
     heart.style.fontSize =
-    (Math.random() * 20 + 15) + "px";
+    (Math.random() * 18 + 16) + "px";
+
+    /* OPACIDAD */
+    heart.style.opacity =
+    (Math.random() * 0.5 + 0.2);
 
     document.body.appendChild(heart);
 
@@ -61,11 +68,12 @@ function createHeart(){
 
         heart.remove();
 
-    },10000);
+    },12000);
 
 }
 
-setInterval(createHeart,900);
+/* MENOS CORAZONES */
+setInterval(createHeart,1800);
 
 /* ======================================== */
 /* ✨ ESTRELLITAS */
@@ -99,7 +107,7 @@ function createSparkle(){
 
 }
 
-setInterval(createSparkle,1200);
+setInterval(createSparkle,2500);
 
 /* ======================================== */
 /* ✨ EXPLOSIÓN BOTONES */
@@ -150,7 +158,12 @@ window.addEventListener("load", ()=>{
 
     music.volume = 0.4;
 
-    music.play();
+    /* INTENTA REPRODUCIR */
+    music.play().catch(()=>{
+
+        console.log("Autoplay bloqueado");
+
+    });
 
 });
 
@@ -181,10 +194,35 @@ document.querySelector(".music-icon")
 
         music.play();
 
+        document.querySelector(".music-icon")
+        .innerHTML = "🎵";
+
     }else{
 
         music.pause();
 
+        document.querySelector(".music-icon")
+        .innerHTML = "🔇";
+
     }
+
+});
+
+/* ======================================== */
+/* ✨ EFECTO SUAVE SCROLL */
+/* ======================================== */
+
+window.addEventListener("scroll", ()=>{
+
+    const scroll =
+    window.scrollY;
+
+    document.querySelector(".glow1")
+    .style.transform =
+    `translateY(${scroll * 0.08}px)`;
+
+    document.querySelector(".glow2")
+    .style.transform =
+    `translateY(-${scroll * 0.08}px)`;
 
 });
