@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -38,27 +39,18 @@
 <nav>
 
 <div class="logo">
-
 ♡ Para ti
-
 </div>
 
 <ul>
-
 <li><a href="#">Inicio</a></li>
-
 <li><a href="#">Nosotros</a></li>
-
 <li><a href="#">Momentos</a></li>
-
 <li><a href="#">Para ti</a></li>
-
 </ul>
 
-<div class="music-icon">
-
+<div class="music-icon" id="musicBtn">
 🎵
-
 </div>
 
 </nav>
@@ -70,39 +62,27 @@
 <div class="overlay"></div>
 
 <div class="floating-heart">
-
 ♡
-
 </div>
 
 <div class="hero-content">
 
 <h1>
-
 No hice esta página <br>
-
 <span>para impresionar a cualquiera.</span>
-
 </h1>
 
 <div class="mini-heart">
-
 💗
-
 </div>
 
 <p>
-
 La hice porque conocerte se volvió <br>
-
 una parte bonita de mis días.
-
 </p>
 
-<a href="#" class="btn">
-
+<a href="#moments" class="btn">
 Entrar ♡
-
 </a>
 
 </div>
@@ -111,20 +91,16 @@ Entrar ♡
 
 <!-- ===== MOMENTS ===== -->
 
-<section class="moments">
+<section class="moments" id="moments">
 
 <div class="moments-title">
 
 <h2>
-
 Nuestros momentos 💕
-
 </h2>
 
 <p>
-
 Pequeños recuerdos que me importan.
-
 </p>
 
 </div>
@@ -138,27 +114,19 @@ Pequeños recuerdos que me importan.
 <div class="card">
 
 <div class="circle">
-
 💬
-
 </div>
 
 <h3>
-
 🌙 Nuestras conversaciones
-
 </h3>
 
 <span>
-
 “Contigo las horas pasan rápido.”
-
 </span>
 
 <div class="heart-small">
-
 ♡
-
 </div>
 
 </div>
@@ -168,27 +136,19 @@ Pequeños recuerdos que me importan.
 <div class="card">
 
 <div class="circle">
-
 ✨
-
 </div>
 
 <h3>
-
 ✨ Tu forma de ser
-
 </h3>
 
 <span>
-
 “Tienes una energía bonita y tranquila.”
-
 </span>
 
 <div class="heart-small">
-
 ♡
-
 </div>
 
 </div>
@@ -198,27 +158,19 @@ Pequeños recuerdos que me importan.
 <div class="card">
 
 <div class="circle">
-
 😊
-
 </div>
 
 <h3>
-
 😊 Tu sonrisa
-
 </h3>
 
 <span>
-
 “Se siente sincera… y eso me gusta.”
-
 </span>
 
 <div class="heart-small">
-
 ♡
-
 </div>
 
 </div>
@@ -228,27 +180,19 @@ Pequeños recuerdos que me importan.
 <div class="card">
 
 <div class="circle">
-
 💖
-
 </div>
 
 <h3>
-
 💖 Coincidir contigo
-
 </h3>
 
 <span>
-
 “Entre tantas personas… apareciste tú.”
-
 </span>
 
 <div class="heart-small">
-
 ♡
-
 </div>
 
 </div>
@@ -264,43 +208,31 @@ Pequeños recuerdos que me importan.
 <div class="question-container">
 
 <h2>
-
 ¿Quieres seguir conociéndome?
-
 </h2>
 
 <div class="line-heart">
-
 ── 💗 ──
-
 </div>
 
 <div class="buttons">
 
 <button class="No">
-
 No ♡
-
 </button>
 
 <button class="obvio">
-
 Obvio 🥰
-
 </button>
 
 <button class="maybe">
-
 Tal vez 👀
-
 </button>
 
 </div>
 
 <p class="question-text">
-
 (Elige lo que sientes)
-
 </p>
 
 </div>
@@ -314,15 +246,11 @@ Tal vez 👀
 <div class="music-box">
 
 <h2>
-
 No sé qué vaya a pasar contigo y conmigo...
-
 </h2>
 
 <p class="music-subtitle">
-
 pero me gusta esta historia mientras sucede.
-
 </p>
 
 <div class="player">
@@ -344,23 +272,17 @@ pero me gusta esta historia mientras sucede.
 <div>
 
 <h3>
-
 Para ti 💞
-
 </h3>
 
 <p>
-
 Solo tú y yo, paso a paso.
-
 </p>
 
 </div>
 
 <div class="heart-player">
-
 ♡
-
 </div>
 
 </div>
@@ -368,19 +290,14 @@ Solo tú y yo, paso a paso.
 <!-- BAR -->
 
 <div class="bar">
-
 <div class="progress"></div>
-
 </div>
 
 <!-- TIME -->
 
 <div class="time">
-
 <span>1:24</span>
-
 <span>3:41</span>
-
 </div>
 
 <!-- CONTROLS -->
@@ -389,10 +306,8 @@ Solo tú y yo, paso a paso.
 
 <span>⏮</span>
 
-<span class="play">
-
+<span class="play" id="playBtn">
 ⏸
-
 </span>
 
 <span>⏭</span>
@@ -412,25 +327,19 @@ Solo tú y yo, paso a paso.
 <footer>
 
 <p>
-
 Hecho con ❤️ para ti
-
 </p>
 
 <p>
-
 Gracias por existir.
-
 </p>
 
 </footer>
 
 <!-- ===== AUDIO ===== -->
 
-<audio id="music" autoplay loop>
-
+<audio id="music" loop>
 <source src="musica.mp3" type="audio/mp3">
-
 </audio>
 
 <script src="script.js"></script>
@@ -438,3 +347,5 @@ Gracias por existir.
 </body>
 
 </html>
+```
+
