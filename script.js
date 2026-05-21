@@ -9,75 +9,60 @@ const numero = "593999999999";
 /* 💬 BOTONES WHATSAPP */
 /* ======================================== */
 
-const btnNo =
-document.querySelector(".No");
+const btnNo = document.querySelector(".No");
+const btnObvio = document.querySelector(".obvio");
+const btnMaybe = document.querySelector(".maybe");
 
-const btnObvio =
-document.querySelector(".obvio");
+function openWhatsApp(message, event){
 
-const btnMaybe =
-document.querySelector(".maybe");
+    createExplosion(event);
 
-/* BOTÓN NO */
+    window.open(
+        `https://wa.me/${numero}?text=${encodeURIComponent(message)}`,
+        "_blank"
+    );
+
+}
 
 if(btnNo){
 
     btnNo.addEventListener("click",(e)=>{
 
-        createExplosion(e);
-
-        window.open(
-        `https://wa.me/${numero}?text=Elegí%20No%20💔`
-        );
+        openWhatsApp("Elegí No 💔", e);
 
     });
 
 }
-
-/* BOTÓN OBVIO */
 
 if(btnObvio){
 
     btnObvio.addEventListener("click",(e)=>{
 
-        createExplosion(e);
-
-        window.open(
-        `https://wa.me/${numero}?text=Obvio%20que%20sí%20🥰`
-        );
+        openWhatsApp("Obvio que sí 🥰", e);
 
     });
 
 }
-
-/* BOTÓN TAL VEZ */
 
 if(btnMaybe){
 
     btnMaybe.addEventListener("click",(e)=>{
 
-        createExplosion(e);
-
-        window.open(
-        `https://wa.me/${numero}?text=Tal%20vez...%20👀`
-        );
+        openWhatsApp("Tal vez... 👀", e);
 
     });
 
 }
 
 /* ======================================== */
-/* 💖 MUCHOS CORAZONES FLOTANTES */
+/* 💖 CORAZONES FLOTANTES */
 /* ======================================== */
 
 function createHeart(){
 
-    const heart =
-    document.createElement("div");
+    const heart = document.createElement("div");
 
     heart.classList.add("floating");
-
-    /* DIFERENTES CORAZONES */
 
     const hearts = [
         "💖",
@@ -88,48 +73,37 @@ function createHeart(){
         "🌸"
     ];
 
+    const colors = [
+        "#ff4fa3",
+        "#ff7ac3",
+        "#ff94d2",
+        "#ff5ea8",
+        "#ff3d96",
+        "#ffc1e3"
+    ];
+
     heart.innerHTML =
     hearts[Math.floor(Math.random()*hearts.length)];
-
-    /* POSICIÓN */
 
     heart.style.left =
     Math.random() * 100 + "vw";
 
     heart.style.bottom = "-50px";
 
-    /* DURACIÓN */
-
     heart.style.animationDuration =
     (Math.random() * 5 + 6) + "s";
-
-    /* TAMAÑO */
 
     heart.style.fontSize =
     (Math.random() * 22 + 18) + "px";
 
-    /* OPACIDAD */
-
     heart.style.opacity =
     (Math.random() * 0.5 + 0.4);
 
-    /* ROTACIÓN */
+    heart.style.color =
+    colors[Math.floor(Math.random()*colors.length)];
 
     heart.style.transform =
     `rotate(${Math.random()*360}deg)`;
-
-    /* COLOR MÁS VIVO */
-
-    const colors = [
-        "#ff4fa3",
-        "#ff7ac3",
-        "#ff94d2",
-        "#ff5ea8",
-        "#ff3d96"
-    ];
-
-    heart.style.color =
-    colors[Math.floor(Math.random()*colors.length)];
 
     document.body.appendChild(heart);
 
@@ -141,12 +115,12 @@ function createHeart(){
 
 }
 
-/* MUCHOS MÁS CORAZONES */
+/* MÁS CORAZONES */
 
-setInterval(createHeart,500);
+setInterval(createHeart, 500);
 
 /* ======================================== */
-/* ✨ ESTRELLITAS */
+/* ✨ SPARKLES */
 /* ======================================== */
 
 function createSparkle(){
@@ -180,12 +154,10 @@ function createSparkle(){
 
 }
 
-/* MÁS ESTRELLAS */
-
 setInterval(createSparkle,1800);
 
 /* ======================================== */
-/* 💥 EXPLOSIÓN BOTONES */
+/* 💥 EXPLOSIÓN */
 /* ======================================== */
 
 function createExplosion(event){
@@ -239,13 +211,21 @@ function createExplosion(event){
 }
 
 /* ======================================== */
-/* 🎵 MÚSICA AUTOMÁTICA */
+/* 🎵 MÚSICA */
 /* ======================================== */
 
-window.addEventListener("load",()=>{
+const music =
+document.getElementById("music");
 
-    const music =
-    document.getElementById("music");
+const musicBtn =
+document.querySelector(".music-icon");
+
+const playBtn =
+document.getElementById("playBtn");
+
+/* AUTO PLAY */
+
+window.addEventListener("load",()=>{
 
     if(music){
 
@@ -257,9 +237,7 @@ window.addEventListener("load",()=>{
 
         }).catch(()=>{
 
-            console.log(
-            "Autoplay bloqueado"
-            );
+            console.log("Autoplay bloqueado");
 
         });
 
@@ -267,14 +245,9 @@ window.addEventListener("load",()=>{
 
 });
 
-/* ======================================== */
-/* 📱 SI CELULAR BLOQUEA */
-/* ======================================== */
+/* SI CELULAR BLOQUEA */
 
 document.body.addEventListener("click",()=>{
-
-    const music =
-    document.getElementById("music");
 
     if(music){
 
@@ -286,41 +259,73 @@ document.body.addEventListener("click",()=>{
 
 },{ once:true });
 
-/* ======================================== */
-/* 🎵 BOTÓN MÚSICA */
-/* ======================================== */
-
-const musicBtn =
-document.querySelector(".music-icon");
+/* BOTÓN NAV */
 
 if(musicBtn){
 
     musicBtn.addEventListener("click",()=>{
 
-        const music =
-        document.getElementById("music");
+        toggleMusic();
 
-        if(!music) return;
+    });
 
-        if(music.paused){
+}
 
-            music.play();
+/* BOTÓN PLAYER */
+
+if(playBtn){
+
+    playBtn.addEventListener("click",()=>{
+
+        toggleMusic();
+
+    });
+
+}
+
+/* TOGGLE */
+
+function toggleMusic(){
+
+    if(!music) return;
+
+    if(music.paused){
+
+        music.play();
+
+        if(musicBtn){
 
             musicBtn.innerHTML = "🎵";
 
-            startMusicAnimation();
+        }
 
-        }else{
+        if(playBtn){
 
-            music.pause();
-
-            musicBtn.innerHTML = "🔇";
-
-            stopMusicAnimation();
+            playBtn.innerHTML = "⏸";
 
         }
 
-    });
+        startMusicAnimation();
+
+    }else{
+
+        music.pause();
+
+        if(musicBtn){
+
+            musicBtn.innerHTML = "🔇";
+
+        }
+
+        if(playBtn){
+
+            playBtn.innerHTML = "▶";
+
+        }
+
+        stopMusicAnimation();
+
+    }
 
 }
 
@@ -329,9 +334,6 @@ if(musicBtn){
 /* ======================================== */
 
 function startMusicAnimation(){
-
-    const musicBtn =
-    document.querySelector(".music-icon");
 
     if(musicBtn){
 
@@ -344,9 +346,6 @@ function startMusicAnimation(){
 
 function stopMusicAnimation(){
 
-    const musicBtn =
-    document.querySelector(".music-icon");
-
     if(musicBtn){
 
         musicBtn.style.animation =
@@ -357,7 +356,7 @@ function stopMusicAnimation(){
 }
 
 /* ======================================== */
-/* ✨ EFECTO SCROLL */
+/* ✨ SCROLL EFFECT */
 /* ======================================== */
 
 window.addEventListener("scroll",()=>{
@@ -371,6 +370,9 @@ window.addEventListener("scroll",()=>{
     const glow2 =
     document.querySelector(".glow2");
 
+    const nav =
+    document.querySelector("nav");
+
     if(glow1){
 
         glow1.style.transform =
@@ -382,6 +384,30 @@ window.addEventListener("scroll",()=>{
 
         glow2.style.transform =
         `translateY(-${scroll * 0.04}px)`;
+
+    }
+
+    /* NAVBAR */
+
+    if(nav){
+
+        if(scroll > 40){
+
+            nav.style.background =
+            "rgba(22, 14, 45, 0.85)";
+
+            nav.style.backdropFilter =
+            "blur(20px)";
+
+            nav.style.boxShadow =
+            "0 0 20px rgba(0,0,0,0.25)";
+
+        }else{
+
+            nav.style.background =
+            "rgba(22, 14, 45, 0.55)";
+
+        }
 
     }
 
@@ -448,33 +474,7 @@ window.addEventListener("load",()=>{
 });
 
 /* ======================================== */
-/* ✨ EFECTO NAVBAR */
-/* ======================================== */
-
-window.addEventListener("scroll",()=>{
-
-    const nav =
-    document.querySelector("nav");
-
-    if(window.scrollY > 40){
-
-        nav.style.background =
-        "rgba(15,15,35,0.75)";
-
-        nav.style.backdropFilter =
-        "blur(20px)";
-
-    }else{
-
-        nav.style.background =
-        "rgba(10,10,30,0.35)";
-
-    }
-
-});
-
-/* ======================================== */
-/* ✨ CSS EXTRA DESDE JS */
+/* ✨ CSS EXTRA */
 /* ======================================== */
 
 const style =
@@ -497,4 +497,3 @@ style.innerHTML = `
 `;
 
 document.head.appendChild(style);
-
