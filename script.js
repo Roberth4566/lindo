@@ -1,16 +1,15 @@
-```javascript id="n4tp8f"
 const numero = "593995296138";
 
 /* ======================================== */
 /* 💬 BOTONES WHATSAPP */
 /* ======================================== */
 
-document.querySelector(".yes").addEventListener("click", ()=>{
+document.querySelector(".No").addEventListener("click", ()=>{
 
     createExplosion();
 
     window.open(
-    `https://wa.me/${numero}?text=Elegí%20SI%20💖`
+    `https://wa.me/${numero}?text=Elegí%20No%20💔`
     );
 
 });
@@ -47,7 +46,8 @@ function createHeart(){
 
     heart.innerHTML = "💖";
 
-    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.left =
+    Math.random() * 100 + "vw";
 
     heart.style.animationDuration =
     (Math.random() * 5 + 5) + "s";
@@ -73,7 +73,8 @@ setInterval(createHeart,900);
 
 function createSparkle(){
 
-    const sparkle = document.createElement("span");
+    const sparkle =
+    document.createElement("span");
 
     sparkle.classList.add("sparkle");
 
@@ -137,12 +138,53 @@ function createExplosion(){
 }
 
 /* ======================================== */
-/* ✨ EFECTO AL CARGAR */
+/* 🎵 MÚSICA AUTOMÁTICA */
 /* ======================================== */
 
 window.addEventListener("load", ()=>{
 
     createExplosion();
 
+    const music =
+    document.getElementById("music");
+
+    music.volume = 0.4;
+
+    music.play();
+
 });
-```
+
+/* ======================================== */
+/* 📱 SI EL CELULAR BLOQUEA AUTOPLAY */
+/* ======================================== */
+
+document.body.addEventListener("click", ()=>{
+
+    const music =
+    document.getElementById("music");
+
+    music.play();
+
+},{ once:true });
+
+/* ======================================== */
+/* 🎵 BOTÓN MÚSICA */
+/* ======================================== */
+
+document.querySelector(".music-icon")
+.addEventListener("click", ()=>{
+
+    const music =
+    document.getElementById("music");
+
+    if(music.paused){
+
+        music.play();
+
+    }else{
+
+        music.pause();
+
+    }
+
+});
