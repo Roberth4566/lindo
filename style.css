@@ -16,7 +16,8 @@ html{
 }
 
 body{
-    background:#060816;
+    background:
+    radial-gradient(circle at top,#13162c 0%,#060816 60%);
     color:white;
     overflow-x:hidden;
     position:relative;
@@ -144,12 +145,12 @@ body{
 }
 
 /* ======================================== */
-/* 💖 CORAZONES FLOTANTES */
+/* 💖 CORAZONES */
 /* ======================================== */
 
 .floating{
     position:fixed;
-    color:rgba(255,139,194,0.5);
+    color:rgba(255,139,194,0.25);
     bottom:-50px;
     z-index:1;
     pointer-events:none;
@@ -225,8 +226,12 @@ nav{
     justify-content:space-between;
     align-items:center;
     z-index:1000;
-    backdrop-filter:blur(12px);
-    background:rgba(0,0,0,0.15);
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(10,10,25,0.45);
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
 .logo{
@@ -281,10 +286,10 @@ nav ul li a:hover{
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:120px 20px;
+    padding:140px 20px 100px;
 
     background:
-    linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.7)),
+    linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.75)),
     url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop');
 
     background-size:cover;
@@ -298,17 +303,17 @@ nav ul li a:hover{
 
     background:
     radial-gradient(circle at top right,
-    rgba(255,139,194,0.18),
+    rgba(255,139,194,0.15),
     transparent 40%);
 }
 
 .floating-heart{
     position:absolute;
-    right:10%;
-    top:25%;
-    font-size:180px;
+    right:8%;
+    top:22%;
+    font-size:160px;
     color:#ff8bc2;
-    opacity:0.7;
+    opacity:0.18;
     text-shadow:0 0 35px #ff8bc2;
     animation:float 4s ease-in-out infinite;
 }
@@ -336,11 +341,13 @@ nav ul li a:hover{
 }
 
 .hero h1{
-    font-size:72px;
-    line-height:1.2;
-    margin-bottom:25px;
+    font-size:68px;
+    line-height:1.25;
+    margin-bottom:28px;
     font-weight:700;
-    text-shadow:0 0 18px rgba(255,139,194,0.18);
+
+    text-shadow:
+    0 0 20px rgba(255,139,194,0.15);
 }
 
 .hero h1 span{
@@ -349,12 +356,12 @@ nav ul li a:hover{
 
 .mini-heart{
     font-size:32px;
-    margin-bottom:20px;
+    margin-bottom:22px;
 }
 
 .hero p{
     font-size:22px;
-    line-height:1.8;
+    line-height:1.9;
     color:#ececec;
     margin-bottom:45px;
 }
@@ -380,10 +387,19 @@ nav ul li a:hover{
 
 .moments{
     position:relative;
-    padding:120px 8%;
-    background:linear-gradient(to bottom,#efbfd1,#dcaec4);
-    color:#222;
+    padding:130px 8%;
+    background:
+    linear-gradient(to bottom,#0a0d1c,#11152b);
     overflow:hidden;
+}
+
+.section-line{
+    width:120px;
+    height:4px;
+    background:#ff8bc2;
+    margin:0 auto 60px;
+    border-radius:50px;
+    box-shadow:0 0 20px rgba(255,139,194,0.6);
 }
 
 .moments-title{
@@ -392,27 +408,20 @@ nav ul li a:hover{
 }
 
 .moments-title h2{
-    font-size:50px;
+    font-size:52px;
     margin-bottom:15px;
+    color:white;
 }
 
 .moments-title p{
     font-size:18px;
-}
-
-.timeline{
-    position:absolute;
-    top:320px;
-    left:10%;
-    width:80%;
-    height:2px;
-    background:rgba(255,255,255,0.5);
+    color:#d6d6d6;
 }
 
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:35px;
     position:relative;
     z-index:2;
     align-items:stretch;
@@ -420,29 +429,42 @@ nav ul li a:hover{
 
 .card{
     position:relative;
-    background:rgba(255,255,255,0.15);
-    border:1px solid rgba(255,255,255,0.25);
-    backdrop-filter:blur(10px);
-    border-radius:30px;
-    padding:40px 25px;
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.12);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:32px;
+
+    padding:45px 30px;
+
     text-align:center;
+
     transition:0.4s;
 
     display:flex;
     flex-direction:column;
     justify-content:flex-start;
     align-items:center;
-    min-height:420px;
+
+    min-height:390px;
+
+    box-shadow:
+    0 0 25px rgba(255,139,194,0.08);
 }
 
 .card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 0 30px rgba(255,255,255,0.4);
+    transform:translateY(-12px);
+
+    box-shadow:
+    0 0 35px rgba(255,139,194,0.2);
 }
 
 .circle{
-    width:75px;
-    height:75px;
+    width:82px;
+    height:82px;
     border-radius:50%;
     background:#ff8bc2;
     color:white;
@@ -450,20 +472,23 @@ nav ul li a:hover{
     justify-content:center;
     align-items:center;
     margin:auto;
-    margin-bottom:25px;
-    font-size:30px;
-    box-shadow:0 0 25px rgba(255,139,194,0.5);
+    margin-bottom:28px;
+    font-size:32px;
+
+    box-shadow:
+    0 0 25px rgba(255,139,194,0.5);
 }
 
 .card h3{
-    font-size:22px;
-    margin-bottom:18px;
-    min-height:80px;
+    font-size:24px;
+    margin-bottom:20px;
+    color:white;
+
+    min-height:75px;
 
     display:flex;
     align-items:center;
     justify-content:center;
-    text-align:center;
 }
 
 .card span{
@@ -471,23 +496,32 @@ nav ul li a:hover{
     align-items:center;
     justify-content:center;
     text-align:center;
-    line-height:1.8;
+
+    line-height:1.9;
+
     font-size:16px;
+
+    color:#dddddd;
+
     flex:1;
 }
 
 .heart-small{
     margin-top:25px;
     color:#ff8bc2;
-    font-size:22px;
+    font-size:24px;
 }
 
 /* ===== QUESTION ===== */
 
 .question{
-    padding:120px 20px;
-    background:radial-gradient(circle at top,#161932,#060816 70%);
+    padding:130px 20px;
+
+    background:
+    radial-gradient(circle at top,#161932,#060816 70%);
+
     text-align:center;
+
     overflow:hidden;
 }
 
@@ -497,14 +531,14 @@ nav ul li a:hover{
 }
 
 .question h2{
-    font-size:55px;
+    font-size:58px;
     margin-bottom:25px;
 }
 
 .line-heart{
     font-size:26px;
     color:#ff8bc2;
-    margin-bottom:40px;
+    margin-bottom:45px;
 }
 
 .buttons{
@@ -517,8 +551,8 @@ nav ul li a:hover{
 .buttons button{
     padding:18px 55px;
     border-radius:50px;
-    border:1px solid rgba(255,255,255,0.2);
-    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.15);
+    background:rgba(255,255,255,0.06);
     color:white;
     font-size:20px;
     backdrop-filter:blur(10px);
@@ -541,25 +575,31 @@ nav ul li a:hover{
 /* ===== MUSIC ===== */
 
 .music{
-    padding:120px 8%;
-    background:linear-gradient(to bottom,#090b1a,#11152b);
+    padding:130px 8%;
+
+    background:
+    linear-gradient(to bottom,#090b1a,#11152b);
 }
 
 .music-box{
     max-width:1050px;
     margin:auto;
-    padding:60px;
+    padding:65px;
     border-radius:40px;
 
     background:
-    linear-gradient(rgba(11,11,30,0.72),rgba(11,11,30,0.72)),
+    linear-gradient(rgba(11,11,30,0.78),rgba(11,11,30,0.78)),
     url('https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=1600&auto=format&fit=crop');
 
     background-size:cover;
     background-position:center;
 
     border:1px solid rgba(255,255,255,0.1);
+
     overflow:hidden;
+
+    box-shadow:
+    0 0 40px rgba(255,139,194,0.12);
 }
 
 .music-box h2{
@@ -570,27 +610,27 @@ nav ul li a:hover{
 
 .music-subtitle{
     text-align:center;
-    font-size:23px;
+    font-size:22px;
     color:#ff8bc2;
-    margin-bottom:50px;
+    margin-bottom:55px;
 }
 
 .player{
     background:rgba(0,0,0,0.42);
     border:1px solid rgba(255,255,255,0.12);
     backdrop-filter:blur(14px);
-    border-radius:30px;
-    padding:30px;
+    border-radius:32px;
+    padding:35px;
     display:flex;
     align-items:center;
-    gap:25px;
+    gap:30px;
     flex-wrap:wrap;
 }
 
 .cover{
-    width:140px;
-    height:140px;
-    border-radius:22px;
+    width:145px;
+    height:145px;
+    border-radius:24px;
     overflow:hidden;
     flex-shrink:0;
 }
@@ -609,11 +649,11 @@ nav ul li a:hover{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    margin-bottom:20px;
+    margin-bottom:22px;
 }
 
 .top-info h3{
-    font-size:28px;
+    font-size:30px;
     margin-bottom:8px;
 }
 
@@ -622,7 +662,7 @@ nav ul li a:hover{
 }
 
 .heart-player{
-    font-size:30px;
+    font-size:32px;
     color:#ff8bc2;
 }
 
@@ -645,7 +685,7 @@ nav ul li a:hover{
     display:flex;
     justify-content:space-between;
     color:#ddd;
-    margin-bottom:25px;
+    margin-bottom:28px;
 }
 
 .controls{
@@ -667,21 +707,23 @@ nav ul li a:hover{
 }
 
 .play{
-    width:70px;
-    height:70px;
+    width:72px;
+    height:72px;
     border-radius:50%;
     background:#ff8bc2;
     display:flex;
     justify-content:center;
     align-items:center;
-    box-shadow:0 0 30px rgba(255,139,194,0.5);
+
+    box-shadow:
+    0 0 30px rgba(255,139,194,0.5);
 }
 
 /* ===== FOOTER ===== */
 
 footer{
     text-align:center;
-    padding:45px 20px;
+    padding:50px 20px;
     background:#060816;
     color:#ddd;
 }
@@ -695,7 +737,7 @@ footer p{
 @media(max-width:900px){
 
     .hero h1{
-        font-size:55px;
+        font-size:54px;
     }
 
     .question h2{
@@ -721,6 +763,10 @@ footer p{
         justify-content:center;
     }
 
+    .hero{
+        padding-top:180px;
+    }
+
     .hero h1{
         font-size:40px;
     }
@@ -737,16 +783,12 @@ footer p{
         font-size:38px;
     }
 
-    .timeline{
-        display:none;
-    }
-
     .question h2{
         font-size:34px;
     }
 
     .music-box{
-        padding:35px 20px;
+        padding:35px 22px;
     }
 
     .player{
@@ -777,6 +819,10 @@ footer p{
 
     .buttons button{
         width:100%;
+    }
+
+    .music-box h2{
+        font-size:30px;
     }
 
 }
