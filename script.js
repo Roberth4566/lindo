@@ -4,35 +4,51 @@ const numero = "593995296138";
 /* 💬 BOTONES WHATSAPP */
 /* ======================================== */
 
-document.querySelector(".No").addEventListener("click", ()=>{
+const btnNo = document.querySelector(".No");
+const btnObvio = document.querySelector(".obvio");
+const btnMaybe = document.querySelector(".maybe");
 
-    createExplosion();
+if(btnNo){
 
-    window.open(
-    `https://wa.me/${numero}?text=Elegí%20No%20💔`
-    );
+    btnNo.addEventListener("click", (e)=>{
 
-});
+        createExplosion(e);
 
-document.querySelector(".obvio").addEventListener("click", ()=>{
+        window.open(
+        `https://wa.me/${numero}?text=Elegí%20No%20💔`
+        );
 
-    createExplosion();
+    });
 
-    window.open(
-    `https://wa.me/${numero}?text=Obvio%20que%20sí%20🥰`
-    );
+}
 
-});
+if(btnObvio){
 
-document.querySelector(".maybe").addEventListener("click", ()=>{
+    btnObvio.addEventListener("click", (e)=>{
 
-    createExplosion();
+        createExplosion(e);
 
-    window.open(
-    `https://wa.me/${numero}?text=Tal%20vez...%20👀`
-    );
+        window.open(
+        `https://wa.me/${numero}?text=Obvio%20que%20sí%20🥰`
+        );
 
-});
+    });
+
+}
+
+if(btnMaybe){
+
+    btnMaybe.addEventListener("click", (e)=>{
+
+        createExplosion(e);
+
+        window.open(
+        `https://wa.me/${numero}?text=Tal%20vez...%20👀`
+        );
+
+    });
+
+}
 
 /* ======================================== */
 /* 💖 CORAZONES FLOTANDO */
@@ -46,21 +62,28 @@ function createHeart(){
 
     heart.innerHTML = "💖";
 
-    /* POSICIÓN ALEATORIA */
+    /* POSICIÓN MÁS LIMPIA */
     heart.style.left =
     Math.random() * 100 + "vw";
 
-    /* DURACIÓN */
+    /* QUE NO SALGAN ARRIBA */
+    heart.style.bottom = "-40px";
+
+    /* DURACIÓN MÁS SUAVE */
     heart.style.animationDuration =
-    (Math.random() * 6 + 6) + "s";
+    (Math.random() * 6 + 8) + "s";
 
     /* TAMAÑO */
     heart.style.fontSize =
-    (Math.random() * 18 + 16) + "px";
+    (Math.random() * 14 + 14) + "px";
 
     /* OPACIDAD */
     heart.style.opacity =
-    (Math.random() * 0.5 + 0.2);
+    (Math.random() * 0.4 + 0.15);
+
+    /* ROTACIÓN */
+    heart.style.transform =
+    `rotate(${Math.random() * 360}deg)`;
 
     document.body.appendChild(heart);
 
@@ -68,12 +91,12 @@ function createHeart(){
 
         heart.remove();
 
-    },12000);
+    },14000);
 
 }
 
 /* MENOS CORAZONES */
-setInterval(createHeart,1800);
+setInterval(createHeart,2200);
 
 /* ======================================== */
 /* ✨ ESTRELLITAS */
@@ -95,7 +118,10 @@ function createSparkle(){
     Math.random()*100 + "vh";
 
     sparkle.style.fontSize =
-    (Math.random()*15+10)+"px";
+    (Math.random()*10+10)+"px";
+
+    sparkle.style.opacity =
+    (Math.random()*0.5+0.3);
 
     document.body.appendChild(sparkle);
 
@@ -103,17 +129,20 @@ function createSparkle(){
 
         sparkle.remove();
 
-    },2000);
+    },2500);
 
 }
 
-setInterval(createSparkle,2500);
+setInterval(createSparkle,3000);
 
 /* ======================================== */
 /* ✨ EXPLOSIÓN BOTONES */
 /* ======================================== */
 
-function createExplosion(){
+function createExplosion(event){
+
+    const x = event.clientX;
+    const y = event.clientY;
 
     for(let i=0;i<18;i++){
 
@@ -124,14 +153,18 @@ function createExplosion(){
 
         sparkle.innerHTML = "💖";
 
+        sparkle.style.position = "fixed";
+
         sparkle.style.left =
-        Math.random()*100 + "vw";
+        (x + (Math.random() * 120 - 60)) + "px";
 
         sparkle.style.top =
-        Math.random()*100 + "vh";
+        (y + (Math.random() * 120 - 60)) + "px";
 
         sparkle.style.fontSize =
         (Math.random()*20+10)+"px";
+
+        sparkle.style.pointerEvents = "none";
 
         document.body.appendChild(sparkle);
 
@@ -151,19 +184,24 @@ function createExplosion(){
 
 window.addEventListener("load", ()=>{
 
-    createExplosion();
-
     const music =
     document.getElementById("music");
 
-    music.volume = 0.4;
+    if(music){
 
-    /* INTENTA REPRODUCIR */
-    music.play().catch(()=>{
+        music.volume = 0.4;
 
-        console.log("Autoplay bloqueado");
+        music.play().then(()=>{
 
-    });
+            startMusicAnimation();
+
+        }).catch(()=>{
+
+            console.log("Autoplay bloqueado");
+
+        });
+
+    }
 
 });
 
@@ -176,7 +214,13 @@ document.body.addEventListener("click", ()=>{
     const music =
     document.getElementById("music");
 
-    music.play();
+    if(music){
+
+        music.play();
+
+        startMusicAnimation();
+
+    }
 
 },{ once:true });
 
@@ -184,32 +228,74 @@ document.body.addEventListener("click", ()=>{
 /* 🎵 BOTÓN MÚSICA */
 /* ======================================== */
 
-document.querySelector(".music-icon")
-.addEventListener("click", ()=>{
+const musicBtn =
+document.querySelector(".music-icon");
 
-    const music =
-    document.getElementById("music");
+if(musicBtn){
 
-    if(music.paused){
+    musicBtn.addEventListener("click", ()=>{
 
-        music.play();
+        const music =
+        document.getElementById("music");
 
-        document.querySelector(".music-icon")
-        .innerHTML = "🎵";
+        if(!music) return;
 
-    }else{
+        if(music.paused){
 
-        music.pause();
+            music.play();
 
-        document.querySelector(".music-icon")
-        .innerHTML = "🔇";
+            musicBtn.innerHTML = "🎵";
+
+            startMusicAnimation();
+
+        }else{
+
+            music.pause();
+
+            musicBtn.innerHTML = "🔇";
+
+            stopMusicAnimation();
+
+        }
+
+    });
+
+}
+
+/* ======================================== */
+/* 🎵 ANIMACIÓN ICONO */
+/* ======================================== */
+
+function startMusicAnimation(){
+
+    const musicBtn =
+    document.querySelector(".music-icon");
+
+    if(musicBtn){
+
+        musicBtn.style.animation =
+        "spin 3s linear infinite";
 
     }
 
-});
+}
+
+function stopMusicAnimation(){
+
+    const musicBtn =
+    document.querySelector(".music-icon");
+
+    if(musicBtn){
+
+        musicBtn.style.animation =
+        "none";
+
+    }
+
+}
 
 /* ======================================== */
-/* ✨ EFECTO SUAVE SCROLL */
+/* ✨ EFECTO SCROLL SUAVE */
 /* ======================================== */
 
 window.addEventListener("scroll", ()=>{
@@ -217,12 +303,115 @@ window.addEventListener("scroll", ()=>{
     const scroll =
     window.scrollY;
 
-    document.querySelector(".glow1")
-    .style.transform =
-    `translateY(${scroll * 0.08}px)`;
+    const glow1 =
+    document.querySelector(".glow1");
 
-    document.querySelector(".glow2")
-    .style.transform =
-    `translateY(-${scroll * 0.08}px)`;
+    const glow2 =
+    document.querySelector(".glow2");
+
+    if(glow1){
+
+        glow1.style.transform =
+        `translateY(${scroll * 0.04}px)`;
+
+    }
+
+    if(glow2){
+
+        glow2.style.transform =
+        `translateY(-${scroll * 0.04}px)`;
+
+    }
+
+    /* PARALLAX HERO */
+
+    const hero =
+    document.querySelector(".hero");
+
+    if(hero){
+
+        hero.style.backgroundPositionY =
+        `${scroll * 0.3}px`;
+
+    }
 
 });
+
+/* ======================================== */
+/* ✨ ANIMACIÓN TARJETAS */
+/* ======================================== */
+
+const cards =
+document.querySelectorAll(".card");
+
+const observer =
+new IntersectionObserver((entries)=>{
+
+    entries.forEach((entry)=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.style.opacity = "1";
+
+            entry.target.style.transform =
+            "translateY(0px)";
+
+        }
+
+    });
+
+},{
+    threshold:0.2
+});
+
+cards.forEach((card)=>{
+
+    card.style.opacity = "0";
+
+    card.style.transform =
+    "translateY(50px)";
+
+    card.style.transition =
+    "all 0.8s ease";
+
+    observer.observe(card);
+
+});
+
+/* ======================================== */
+/* ✨ EFECTO AL ENTRAR */
+/* ======================================== */
+
+window.addEventListener("load", ()=>{
+
+    setTimeout(()=>{
+
+        document.body.style.opacity = "1";
+
+    },300);
+
+});
+
+/* ======================================== */
+/* ✨ CSS EXTRA DESDE JS */
+/* ======================================== */
+
+const style = document.createElement("style");
+
+style.innerHTML = `
+
+@keyframes spin{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+`;
+
+document.head.appendChild(style);
