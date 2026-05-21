@@ -11,18 +11,206 @@
     font-family:'Poppins',sans-serif;
 }
 
-/* ===== BODY ===== */
+html{
+    scroll-behavior:smooth;
+}
 
 body{
     background:#060816;
     color:white;
     overflow-x:hidden;
+    position:relative;
 }
 
-/* ===== SMOOTH SCROLL ===== */
+/* ======================================== */
+/* ✨ ESTRELLAS */
+/* ======================================== */
 
-html{
-    scroll-behavior:smooth;
+.stars,
+.stars2{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:0;
+}
+
+.stars::before{
+    content:"";
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+
+    box-shadow:
+    5vw 10vh #fff,
+    15vw 20vh #fff,
+    25vw 80vh #fff,
+    35vw 40vh #fff,
+    45vw 70vh #fff,
+    55vw 15vh #fff,
+    65vw 50vh #fff,
+    75vw 30vh #fff,
+    85vw 60vh #fff,
+    95vw 25vh #fff,
+    10vw 60vh #fff,
+    20vw 45vh #fff,
+    30vw 15vh #fff,
+    40vw 85vh #fff,
+    50vw 55vh #fff,
+    60vw 75vh #fff,
+    70vw 12vh #fff,
+    80vw 90vh #fff,
+    90vw 40vh #fff;
+
+    animation:twinkle 4s infinite alternate;
+}
+
+.stars2::before{
+    content:"";
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:#ff8bc2;
+    border-radius:50%;
+
+    box-shadow:
+    8vw 15vh #ff8bc2,
+    18vw 65vh #ff8bc2,
+    28vw 35vh #ff8bc2,
+    38vw 75vh #ff8bc2,
+    48vw 20vh #ff8bc2,
+    58vw 55vh #ff8bc2,
+    68vw 85vh #ff8bc2,
+    78vw 45vh #ff8bc2,
+    88vw 10vh #ff8bc2;
+
+    animation:twinkle 6s infinite alternate;
+}
+
+@keyframes twinkle{
+
+    0%{
+        opacity:0.2;
+    }
+
+    100%{
+        opacity:1;
+    }
+
+}
+
+/* ======================================== */
+/* 💖 GLOW */
+/* ======================================== */
+
+.glow{
+    position:fixed;
+    width:450px;
+    height:450px;
+    border-radius:50%;
+    filter:blur(130px);
+    opacity:0.18;
+    pointer-events:none;
+    z-index:0;
+    animation:moveGlow 10s ease-in-out infinite alternate;
+}
+
+.glow1{
+    background:#ff5ea8;
+    top:-100px;
+    left:-100px;
+}
+
+.glow2{
+    background:#ff8bc2;
+    bottom:-120px;
+    right:-120px;
+}
+
+@keyframes moveGlow{
+
+    0%{
+        transform:translate(0,0);
+    }
+
+    100%{
+        transform:translate(50px,-30px);
+    }
+
+}
+
+/* ======================================== */
+/* 💖 CORAZONES FLOTANTES */
+/* ======================================== */
+
+.floating{
+    position:fixed;
+    color:rgba(255,139,194,0.5);
+    bottom:-50px;
+    z-index:1;
+    pointer-events:none;
+    animation:floatUp linear forwards;
+}
+
+@keyframes floatUp{
+
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+    }
+
+}
+
+/* ======================================== */
+/* ✨ SPARKLES */
+/* ======================================== */
+
+.sparkle{
+    position:fixed;
+    z-index:1;
+    pointer-events:none;
+    animation:sparkleAnim 2s linear forwards;
+}
+
+@keyframes sparkleAnim{
+
+    0%{
+        opacity:1;
+        transform:scale(0.5);
+    }
+
+    100%{
+        opacity:0;
+        transform:translateY(-40px) scale(1.5);
+    }
+
+}
+
+/* ======================================== */
+/* ✨ TODO ENCIMA */
+/* ======================================== */
+
+nav,
+.hero,
+.moments,
+.question,
+.music,
+footer{
+    position:relative;
+    z-index:2;
 }
 
 /* ===== NAVBAR ===== */
@@ -31,19 +219,13 @@ nav{
     position:fixed;
     top:0;
     left:0;
-
     width:100%;
-
     padding:20px 8%;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     z-index:1000;
-
     backdrop-filter:blur(12px);
-
     background:rgba(0,0,0,0.15);
 }
 
@@ -73,23 +255,15 @@ nav ul li a:hover{
 .music-icon{
     width:45px;
     height:45px;
-
     border-radius:50%;
-
     background:rgba(255,255,255,0.08);
-
     border:1px solid rgba(255,255,255,0.15);
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     font-size:18px;
-
     backdrop-filter:blur(10px);
-
     cursor:pointer;
-
     transition:0.3s;
 }
 
@@ -102,15 +276,11 @@ nav ul li a:hover{
 
 .hero{
     position:relative;
-
     min-height:100vh;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     text-align:center;
-
     padding:120px 20px;
 
     background:
@@ -119,11 +289,8 @@ nav ul li a:hover{
 
     background-size:cover;
     background-position:center;
-
     overflow:hidden;
 }
-
-/* ===== OVERLAY ===== */
 
 .overlay{
     position:absolute;
@@ -135,22 +302,14 @@ nav ul li a:hover{
     transparent 40%);
 }
 
-/* ===== FLOATING HEART ===== */
-
 .floating-heart{
     position:absolute;
-
     right:10%;
     top:25%;
-
     font-size:180px;
-
     color:#ff8bc2;
-
     opacity:0.7;
-
     text-shadow:0 0 35px #ff8bc2;
-
     animation:float 4s ease-in-out infinite;
 }
 
@@ -170,12 +329,9 @@ nav ul li a:hover{
 
 }
 
-/* ===== HERO CONTENT ===== */
-
 .hero-content{
     position:relative;
     z-index:2;
-
     max-width:850px;
 }
 
@@ -184,6 +340,7 @@ nav ul li a:hover{
     line-height:1.2;
     margin-bottom:25px;
     font-weight:700;
+    text-shadow:0 0 18px rgba(255,139,194,0.18);
 }
 
 .hero h1 span{
@@ -198,36 +355,24 @@ nav ul li a:hover{
 .hero p{
     font-size:22px;
     line-height:1.8;
-
     color:#ececec;
-
     margin-bottom:45px;
 }
 
-/* ===== BUTTON ===== */
-
 .btn{
     display:inline-block;
-
     padding:18px 55px;
-
     border-radius:50px;
-
     background:linear-gradient(135deg,#ff9acb,#ff5ea8);
-
     color:white;
     text-decoration:none;
-
     font-weight:600;
-
     transition:0.4s;
-
     box-shadow:0 0 30px rgba(255,139,194,0.35);
 }
 
 .btn:hover{
     transform:translateY(-5px) scale(1.05);
-
     box-shadow:0 0 45px rgba(255,139,194,0.65);
 }
 
@@ -235,22 +380,14 @@ nav ul li a:hover{
 
 .moments{
     position:relative;
-
     padding:120px 8%;
-
-    background:
-    linear-gradient(to bottom,#efbfd1,#dcaec4);
-
+    background:linear-gradient(to bottom,#efbfd1,#dcaec4);
     color:#222;
-
     overflow:hidden;
 }
 
-/* ===== TITLE ===== */
-
 .moments-title{
     text-align:center;
-
     margin-bottom:80px;
 }
 
@@ -263,94 +400,80 @@ nav ul li a:hover{
     font-size:18px;
 }
 
-/* ===== TIMELINE ===== */
-
 .timeline{
     position:absolute;
-
     top:320px;
     left:10%;
-
     width:80%;
     height:2px;
-
     background:rgba(255,255,255,0.5);
 }
 
-/* ===== CARDS ===== */
-
 .cards{
     display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:30px;
-
     position:relative;
     z-index:2;
+    align-items:stretch;
 }
-
-/* ===== CARD ===== */
 
 .card{
     position:relative;
-
     background:rgba(255,255,255,0.15);
-
     border:1px solid rgba(255,255,255,0.25);
-
     backdrop-filter:blur(10px);
-
     border-radius:30px;
-
     padding:40px 25px;
-
     text-align:center;
-
     transition:0.4s;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    min-height:420px;
 }
 
 .card:hover{
     transform:translateY(-10px);
-
     box-shadow:0 0 30px rgba(255,255,255,0.4);
 }
-
-/* ===== CIRCLE ===== */
 
 .circle{
     width:75px;
     height:75px;
-
     border-radius:50%;
-
     background:#ff8bc2;
-
     color:white;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     margin:auto;
     margin-bottom:25px;
-
     font-size:30px;
-
     box-shadow:0 0 25px rgba(255,139,194,0.5);
 }
 
 .card h3{
-    font-size:25px;
+    font-size:22px;
     margin-bottom:18px;
+    min-height:80px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
 }
 
 .card span{
-    display:block;
-
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
     line-height:1.8;
-
-    font-size:15px;
+    font-size:16px;
+    flex:1;
 }
 
 .heart-small{
@@ -363,12 +486,8 @@ nav ul li a:hover{
 
 .question{
     padding:120px 20px;
-
-    background:
-    radial-gradient(circle at top,#161932,#060816 70%);
-
+    background:radial-gradient(circle at top,#161932,#060816 70%);
     text-align:center;
-
     overflow:hidden;
 }
 
@@ -388,49 +507,34 @@ nav ul li a:hover{
     margin-bottom:40px;
 }
 
-/* ===== BUTTONS ===== */
-
 .buttons{
     display:flex;
     justify-content:center;
     gap:25px;
-
     flex-wrap:wrap;
 }
 
 .buttons button{
     padding:18px 55px;
-
     border-radius:50px;
-
     border:1px solid rgba(255,255,255,0.2);
-
     background:rgba(255,255,255,0.08);
-
     color:white;
-
     font-size:20px;
-
     backdrop-filter:blur(10px);
-
     cursor:pointer;
-
     transition:0.35s;
 }
 
 .buttons button:hover{
     background:#ff8bc2;
-
     transform:scale(1.06);
-
     box-shadow:0 0 35px rgba(255,139,194,0.55);
 }
 
 .question-text{
     margin-top:25px;
-
     color:#ff8bc2;
-
     font-size:15px;
 }
 
@@ -438,20 +542,13 @@ nav ul li a:hover{
 
 .music{
     padding:120px 8%;
-
-    background:
-    linear-gradient(to bottom,#090b1a,#11152b);
+    background:linear-gradient(to bottom,#090b1a,#11152b);
 }
-
-/* ===== MUSIC BOX ===== */
 
 .music-box{
     max-width:1050px;
-
     margin:auto;
-
     padding:60px;
-
     border-radius:40px;
 
     background:
@@ -462,70 +559,47 @@ nav ul li a:hover{
     background-position:center;
 
     border:1px solid rgba(255,255,255,0.1);
-
     overflow:hidden;
 }
 
 .music-box h2{
     text-align:center;
-
     font-size:48px;
-
     margin-bottom:18px;
 }
 
 .music-subtitle{
     text-align:center;
-
     font-size:23px;
-
     color:#ff8bc2;
-
     margin-bottom:50px;
 }
 
-/* ===== PLAYER ===== */
-
 .player{
     background:rgba(0,0,0,0.42);
-
     border:1px solid rgba(255,255,255,0.12);
-
     backdrop-filter:blur(14px);
-
     border-radius:30px;
-
     padding:30px;
-
     display:flex;
     align-items:center;
-
     gap:25px;
-
     flex-wrap:wrap;
 }
-
-/* ===== COVER ===== */
 
 .cover{
     width:140px;
     height:140px;
-
     border-radius:22px;
-
     overflow:hidden;
-
     flex-shrink:0;
 }
 
 .cover img{
     width:100%;
     height:100%;
-
     object-fit:cover;
 }
-
-/* ===== INFO ===== */
 
 .player-info{
     flex:1;
@@ -535,7 +609,6 @@ nav ul li a:hover{
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     margin-bottom:20px;
 }
 
@@ -553,54 +626,38 @@ nav ul li a:hover{
     color:#ff8bc2;
 }
 
-/* ===== BAR ===== */
-
 .bar{
     width:100%;
     height:7px;
-
     background:#444;
-
     border-radius:30px;
-
     overflow:hidden;
-
     margin-bottom:15px;
 }
 
 .progress{
     width:55%;
     height:100%;
-
     background:#ff8bc2;
 }
-
-/* ===== TIME ===== */
 
 .time{
     display:flex;
     justify-content:space-between;
-
     color:#ddd;
-
     margin-bottom:25px;
 }
-
-/* ===== CONTROLS ===== */
 
 .controls{
     display:flex;
     justify-content:center;
     align-items:center;
-
     gap:28px;
 }
 
 .controls span{
     font-size:30px;
-
     cursor:pointer;
-
     transition:0.3s;
 }
 
@@ -612,15 +669,11 @@ nav ul li a:hover{
 .play{
     width:70px;
     height:70px;
-
     border-radius:50%;
-
     background:#ff8bc2;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     box-shadow:0 0 30px rgba(255,139,194,0.5);
 }
 
@@ -628,11 +681,8 @@ nav ul li a:hover{
 
 footer{
     text-align:center;
-
     padding:45px 20px;
-
     background:#060816;
-
     color:#ddd;
 }
 
@@ -707,6 +757,10 @@ footer p{
     .top-info{
         flex-direction:column;
         gap:15px;
+    }
+
+    .card{
+        min-height:auto;
     }
 
 }
