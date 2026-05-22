@@ -855,44 +855,83 @@ footer{
     justify-content:center;
 }
 
+```css id="r5j3m1"
 /* ======================================== */
-/* ✅ FIX FINAL GITHUB PAGES */
+/* ✅ FIX DEFINITIVO GITHUB PAGES */
 /* ======================================== */
 
+/* evita overflow horizontal */
 html,
 body{
+    overflow-x:hidden !important;
     width:100%;
     max-width:100%;
-    overflow-x:hidden !important;
 }
 
-/* Evita scroll horizontal por transforms */
-body{
-    position:relative;
+/* corrige todos los contenedores */
+*{
+    box-sizing:border-box;
 }
 
-/* Corrige elementos flotantes */
-.floating,
-.sparkle{
-    position:fixed;
-    pointer-events:none;
-    z-index:1;
-    will-change:transform;
+/* evita que fixed cree scroll */
+.stars,
+.stars2,
+.glow,
+.glow1,
+.glow2{
+    max-width:100vw;
+    overflow:hidden !important;
 }
 
-/* Evita que glow genere overflow */
-.glow{
-    overflow:hidden;
+/* evita que transforms creen espacio */
+section,
+div,
+nav,
+footer{
+    max-width:100%;
 }
 
-/* Corrige navbar */
+/* corrige navbar */
 nav{
     width:100%;
     left:0;
     right:0;
 }
 
-/* Elimina hueco inferior */
-body::after{
-    content:none;
+/* elimina espacio fantasma abajo */
+body{
+    margin:0;
+    min-height:auto !important;
 }
+
+/* elimina scroll horizontal TOTAL */
+body::-webkit-scrollbar-x{
+    display:none;
+}
+
+/* evita desbordamiento del player */
+.player,
+.music-box,
+.cards,
+.card{
+    overflow:hidden;
+}
+
+/* corrige blur overflow */
+.glow{
+    filter:blur(100px);
+}
+
+/* evita ancho extra móvil */
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* corrige footer */
+footer{
+    padding-bottom:30px;
+    margin-bottom:0;
+}
+```
+
