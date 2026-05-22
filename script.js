@@ -1,4 +1,3 @@
-```js
 /* ======================================== */
 /* 📱 WHATSAPP */
 /* ======================================== */
@@ -18,29 +17,20 @@ function openWhatsApp(message){
 }
 
 if(btnNo){
-
     btnNo.addEventListener("click",()=>{
-
         openWhatsApp("Elegí No 💔");
-
     });
 }
 
 if(btnObvio){
-
     btnObvio.addEventListener("click",()=>{
-
         openWhatsApp("Obvio que sí 🥰");
-
     });
 }
 
 if(btnMaybe){
-
     btnMaybe.addEventListener("click",()=>{
-
         openWhatsApp("Tal vez... 👀");
-
     });
 }
 
@@ -52,37 +42,17 @@ const music = document.getElementById("music");
 const musicBtn = document.querySelector(".music-icon");
 const playBtn = document.getElementById("playBtn");
 
-/* intento autoplay */
 window.addEventListener("load",()=>{
 
     if(!music) return;
 
     music.volume = 0.45;
 
-    const promise = music.play();
+    music.play().catch(()=>{});
 
-    if(promise !== undefined){
-
-        promise.catch(()=>{
-
-            console.log("Autoplay bloqueado por navegador");
-
-        });
-    }
 });
 
-/* primer click desbloquea música en móvil */
-document.body.addEventListener("click",()=>{
-
-    if(music && music.paused){
-
-        music.play().catch(()=>{});
-
-    }
-
-},{ once:true });
-
-/* toggle música */
+/* TOGGLE */
 
 function toggleMusic(){
 
@@ -90,50 +60,26 @@ function toggleMusic(){
 
     if(music.paused){
 
-        music.play().catch(()=>{});
+        music.play();
 
-        if(musicBtn){
-            musicBtn.innerHTML = "🎵";
-        }
-
-        if(playBtn){
-            playBtn.innerHTML = "⏸";
-        }
+        if(musicBtn) musicBtn.innerHTML = "🎵";
+        if(playBtn) playBtn.innerHTML = "⏸";
 
     }else{
 
         music.pause();
 
-        if(musicBtn){
-            musicBtn.innerHTML = "🔇";
-        }
-
-        if(playBtn){
-            playBtn.innerHTML = "▶";
-        }
+        if(musicBtn) musicBtn.innerHTML = "🔇";
+        if(playBtn) playBtn.innerHTML = "▶";
     }
 }
 
 if(musicBtn){
-
-    musicBtn.addEventListener("click",(e)=>{
-
-        e.stopPropagation();
-
-        toggleMusic();
-
-    });
+    musicBtn.addEventListener("click", toggleMusic);
 }
 
 if(playBtn){
-
-    playBtn.addEventListener("click",(e)=>{
-
-        e.stopPropagation();
-
-        toggleMusic();
-
-    });
+    playBtn.addEventListener("click", toggleMusic);
 }
 
 /* ======================================== */
@@ -149,14 +95,12 @@ const observer = new IntersectionObserver((entries)=>{
         if(entry.isIntersecting){
 
             entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
+            entry.target.style.transform = "translateY(0px)";
         }
 
     });
 
-},{
-    threshold:0.15
-});
+},{ threshold:0.2 });
 
 cards.forEach(card=>{
 
@@ -177,48 +121,9 @@ window.addEventListener("load",()=>{
 
     setTimeout(()=>{
 
-        document.body.style.transition = "opacity 1s ease";
-
+        document.body.style.transition = "1s";
         document.body.style.opacity = "1";
 
     },100);
 
 });
-
-/* ======================================== */
-/* ✨ NAVBAR SCROLL */
-/* ======================================== */
-
-const nav = document.querySelector("nav");
-
-window.addEventListener("scroll",()=>{
-
-    if(!nav) return;
-
-    if(window.scrollY > 40){
-
-        nav.style.background = "rgba(22,15,45,0.92)";
-
-    }else{
-
-        nav.style.background = "rgba(22,15,45,0.75)";
-    }
-});
-
-/* ======================================== */
-/* ✅ FIX OVERFLOW */
-/* ======================================== */
-
-/* evita scroll raro github pages */
-
-window.addEventListener("resize",()=>{
-
-    document.body.style.overflowX = "hidden";
-
-});
-
-/* seguridad extra */
-
-document.documentElement.style.overflowX = "hidden";
-document.body.style.overflowX = "hidden";
-```
