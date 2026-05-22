@@ -854,3 +854,45 @@ footer{
     align-items:center;
     justify-content:center;
 }
+
+/* ======================================== */
+/* ✅ FIX FINAL GITHUB PAGES */
+/* ======================================== */
+
+html,
+body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden !important;
+}
+
+/* Evita scroll horizontal por transforms */
+body{
+    position:relative;
+}
+
+/* Corrige elementos flotantes */
+.floating,
+.sparkle{
+    position:fixed;
+    pointer-events:none;
+    z-index:1;
+    will-change:transform;
+}
+
+/* Evita que glow genere overflow */
+.glow{
+    overflow:hidden;
+}
+
+/* Corrige navbar */
+nav{
+    width:100%;
+    left:0;
+    right:0;
+}
+
+/* Elimina hueco inferior */
+body::after{
+    content:none;
+}
