@@ -855,8 +855,9 @@ footer{
     justify-content:center;
 }
 
+```css
 /* ======================================== */
-/* 🌙 EFECTO SOL Y LUNA SUAVE */
+/* 🌙 SOL Y LUNA CON IMAGEN */
 /* ======================================== */
 
 .frase-romantica{
@@ -864,63 +865,90 @@ footer{
     overflow:hidden;
 }
 
-/* luna */
+/* imagen arriba derecha */
+
 .frase-romantica::before{
 
     content:"";
 
     position:absolute;
 
-    top:-80px;
-    right:-80px;
+    top:-20px;
+    right:-20px;
 
-    width:220px;
-    height:220px;
+    width:260px;
+    height:260px;
 
-    border-radius:50%;
+    background:url("sol-luna.png");
 
-    background:
-    radial-gradient(
-        circle,
-        rgba(255,255,255,0.10),
-        rgba(255,255,255,0.03),
-        transparent 70%
-    );
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
 
-    filter:blur(8px);
+    opacity:0.12;
+
+    filter:
+    grayscale(100%)
+    brightness(1.2)
+    blur(1px);
 
     pointer-events:none;
+
+    z-index:1;
 }
 
-/* sol */
+/* imagen abajo izquierda */
+
 .frase-romantica::after{
 
     content:"";
 
     position:absolute;
 
-    bottom:-80px;
-    left:-80px;
+    bottom:-20px;
+    left:-20px;
 
-    width:220px;
-    height:220px;
+    width:260px;
+    height:260px;
 
-    border-radius:50%;
+    background:url("sol-luna.png");
 
-    background:
-    radial-gradient(
-        circle,
-        rgba(255,170,120,0.10),
-        rgba(255,120,170,0.04),
-        transparent 70%
-    );
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
 
-    filter:blur(10px);
+    transform:rotate(180deg);
+
+    opacity:0.10;
+
+    filter:
+    grayscale(100%)
+    brightness(1.1)
+    blur(1px);
 
     pointer-events:none;
+
+    z-index:1;
 }
+
+/* texto encima */
 
 .frase-romantica p{
     position:relative;
     z-index:2;
+}
+
+/* móvil */
+
+@media(max-width:768px){
+
+    .frase-romantica::before,
+    .frase-romantica::after{
+
+        width:150px;
+        height:150px;
+
+        opacity:0.08;
+    }
+
 }
