@@ -856,15 +856,16 @@ footer{
 }
 
 /* ======================================== */
-/* 🌙 SOL Y LUNA DECORATIVOS */
+/* 🌙 SOL Y LUNA ELEGANTES */
 /* ======================================== */
 
 .frase-romantica{
     position:relative;
     overflow:hidden;
+    isolation:isolate;
 }
 
-/* 🌙 LUNA ARRIBA DERECHA */
+/* 🌙 LUNA */
 
 .frase-romantica::before{
 
@@ -872,11 +873,11 @@ footer{
 
     position:absolute;
 
-    top:-30px;
-    right:-30px;
+    top:-25px;
+    right:-25px;
 
-    width:240px;
-    height:240px;
+    width:230px;
+    height:230px;
 
     background:url("luna.png");
 
@@ -884,19 +885,17 @@ footer{
     background-repeat:no-repeat;
     background-position:center;
 
-    opacity:0.16;
+    opacity:0.55;
 
     filter:
-    brightness(1.1)
-    grayscale(20%)
-    blur(0.5px);
+    drop-shadow(0 0 18px rgba(255,255,255,0.25));
 
     pointer-events:none;
 
     z-index:1;
 }
 
-/* ☀ SOL ABAJO IZQUIERDA */
+/* ☀️ SOL */
 
 .frase-romantica::after{
 
@@ -904,11 +903,11 @@ footer{
 
     position:absolute;
 
-    bottom:-35px;
-    left:-35px;
+    bottom:-30px;
+    left:-30px;
 
-    width:240px;
-    height:240px;
+    width:230px;
+    height:230px;
 
     background:url("sol.png");
 
@@ -916,18 +915,17 @@ footer{
     background-repeat:no-repeat;
     background-position:center;
 
-    opacity:0.14;
+    opacity:0.45;
 
     filter:
-    brightness(1.05)
-    blur(0.5px);
+    drop-shadow(0 0 25px rgba(255,180,120,0.30));
 
     pointer-events:none;
 
     z-index:1;
 }
 
-/* TEXTO ENCIMA */
+/* ✨ TEXTO ENCIMA */
 
 .frase-romantica p{
     position:relative;
@@ -944,7 +942,7 @@ footer{
         width:140px;
         height:140px;
 
-        opacity:0.10;
+        opacity:0.35;
     }
 
 }
