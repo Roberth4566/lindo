@@ -856,7 +856,7 @@ footer{
 }
 
 /* ======================================== */
-/* 🌙 IMAGENES DECORATIVAS FRASE */
+/* 🌙 EFECTO SOL Y LUNA SUAVE */
 /* ======================================== */
 
 .frase-romantica{
@@ -864,78 +864,63 @@ footer{
     overflow:hidden;
 }
 
-/* luna arriba derecha */
+/* luna */
 .frase-romantica::before{
 
     content:"";
 
     position:absolute;
 
-    top:-40px;
-    right:-40px;
+    top:-80px;
+    right:-80px;
 
-    width:240px;
-    height:240px;
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
 
     background:
-    url("https://i.imgur.com/9v6oK6D.png");
+    radial-gradient(
+        circle,
+        rgba(255,255,255,0.10),
+        rgba(255,255,255,0.03),
+        transparent 70%
+    );
 
-    background-size:cover;
-    background-position:center;
-
-    opacity:0.10;
-
-    filter:
-    grayscale(100%)
-    brightness(1.2);
+    filter:blur(8px);
 
     pointer-events:none;
 }
 
-/* sol abajo izquierda */
+/* sol */
 .frase-romantica::after{
 
     content:"";
 
     position:absolute;
 
-    bottom:-40px;
-    left:-40px;
+    bottom:-80px;
+    left:-80px;
 
-    width:240px;
-    height:240px;
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
 
     background:
-    url("https://i.imgur.com/l0K6G8K.png");
+    radial-gradient(
+        circle,
+        rgba(255,170,120,0.10),
+        rgba(255,120,170,0.04),
+        transparent 70%
+    );
 
-    background-size:cover;
-    background-position:center;
-
-    opacity:0.10;
-
-    filter:
-    grayscale(100%)
-    brightness(1.1);
+    filter:blur(10px);
 
     pointer-events:none;
 }
 
-/* texto encima */
 .frase-romantica p{
     position:relative;
     z-index:2;
-}
-
-/* móvil */
-@media(max-width:768px){
-
-    .frase-romantica::before,
-    .frase-romantica::after{
-
-        width:140px;
-        height:140px;
-
-        opacity:0.08;
-    }
-
 }
