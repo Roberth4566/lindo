@@ -855,9 +855,8 @@ footer{
     justify-content:center;
 }
 
-```css
 /* ======================================== */
-/* 🌙 SOL Y LUNA CON IMAGEN */
+/* 🌙 SOL Y LUNA DECORATIVOS */
 /* ======================================== */
 
 .frase-romantica{
@@ -865,7 +864,7 @@ footer{
     overflow:hidden;
 }
 
-/* imagen arriba derecha */
+/* 🌙 LUNA ARRIBA DERECHA */
 
 .frase-romantica::before{
 
@@ -873,31 +872,31 @@ footer{
 
     position:absolute;
 
-    top:-20px;
-    right:-20px;
+    top:-30px;
+    right:-30px;
 
-    width:260px;
-    height:260px;
+    width:240px;
+    height:240px;
 
-    background:url("sol-luna.png");
+    background:url("luna.png");
 
     background-size:contain;
     background-repeat:no-repeat;
     background-position:center;
 
-    opacity:0.12;
+    opacity:0.16;
 
     filter:
-    grayscale(100%)
-    brightness(1.2)
-    blur(1px);
+    brightness(1.1)
+    grayscale(20%)
+    blur(0.5px);
 
     pointer-events:none;
 
     z-index:1;
 }
 
-/* imagen abajo izquierda */
+/* ☀ SOL ABAJO IZQUIERDA */
 
 .frase-romantica::after{
 
@@ -905,50 +904,49 @@ footer{
 
     position:absolute;
 
-    bottom:-20px;
-    left:-20px;
+    bottom:-35px;
+    left:-35px;
 
-    width:260px;
-    height:260px;
+    width:240px;
+    height:240px;
 
-    background:url("sol-luna.png");
+    background:url("sol.png");
 
     background-size:contain;
     background-repeat:no-repeat;
     background-position:center;
 
-    transform:rotate(180deg);
-
-    opacity:0.10;
+    opacity:0.14;
 
     filter:
-    grayscale(100%)
-    brightness(1.1)
-    blur(1px);
+    brightness(1.05)
+    blur(0.5px);
 
     pointer-events:none;
 
     z-index:1;
 }
 
-/* texto encima */
+/* TEXTO ENCIMA */
 
 .frase-romantica p{
     position:relative;
     z-index:2;
 }
 
-/* móvil */
+/* 📱 MÓVIL */
 
 @media(max-width:768px){
 
     .frase-romantica::before,
     .frase-romantica::after{
 
-        width:150px;
-        height:150px;
+        width:140px;
+        height:140px;
 
-        opacity:0.08;
+        opacity:0.10;
     }
 
 }
+
+
