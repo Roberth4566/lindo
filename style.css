@@ -856,13 +856,20 @@ footer{
 }
 
 /* ======================================== */
-/* 🌙 SOL Y LUNA ELEGANTES */
+/* 🌙 SOL Y LUNA ELEGANTE */
 /* ======================================== */
 
 .frase-romantica{
     position:relative;
     overflow:hidden;
-    isolation:isolate;
+
+    padding:60px 55px;
+
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(18px);
 }
 
 /* 🌙 LUNA */
@@ -873,11 +880,11 @@ footer{
 
     position:absolute;
 
-    top:-25px;
-    right:-25px;
+    top:-35px;
+    right:-35px;
 
-    width:230px;
-    height:230px;
+    width:300px;
+    height:300px;
 
     background:url("luna.png");
 
@@ -885,10 +892,11 @@ footer{
     background-repeat:no-repeat;
     background-position:center;
 
-    opacity:0.55;
+    opacity:0.70;
 
     filter:
-    drop-shadow(0 0 18px rgba(255,255,255,0.25));
+    brightness(1.3)
+    drop-shadow(0 0 35px rgba(255,255,255,0.35));
 
     pointer-events:none;
 
@@ -903,11 +911,11 @@ footer{
 
     position:absolute;
 
-    bottom:-30px;
-    left:-30px;
+    bottom:-35px;
+    left:-35px;
 
-    width:230px;
-    height:230px;
+    width:300px;
+    height:300px;
 
     background:url("sol.png");
 
@@ -915,10 +923,11 @@ footer{
     background-repeat:no-repeat;
     background-position:center;
 
-    opacity:0.45;
+    opacity:0.65;
 
     filter:
-    drop-shadow(0 0 25px rgba(255,180,120,0.30));
+    brightness(1.15)
+    drop-shadow(0 0 40px rgba(255,180,120,0.35));
 
     pointer-events:none;
 
@@ -928,21 +937,33 @@ footer{
 /* ✨ TEXTO ENCIMA */
 
 .frase-romantica p{
+
     position:relative;
+
     z-index:2;
+
+    text-shadow:
+    0 0 10px rgba(0,0,0,0.25);
+
+    line-height:1.9;
 }
 
 /* 📱 MÓVIL */
 
 @media(max-width:768px){
 
+    .frase-romantica{
+
+        padding:45px 30px;
+    }
+
     .frase-romantica::before,
     .frase-romantica::after{
 
-        width:140px;
-        height:140px;
+        width:180px;
+        height:180px;
 
-        opacity:0.35;
+        opacity:0.45;
     }
 
 }
