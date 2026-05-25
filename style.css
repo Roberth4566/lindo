@@ -854,3 +854,88 @@ footer{
     align-items:center;
     justify-content:center;
 }
+
+/* ======================================== */
+/* 🌙 IMAGENES DECORATIVAS FRASE */
+/* ======================================== */
+
+.frase-romantica{
+    position:relative;
+    overflow:hidden;
+}
+
+/* luna arriba derecha */
+.frase-romantica::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-40px;
+    right:-40px;
+
+    width:240px;
+    height:240px;
+
+    background:
+    url("https://i.imgur.com/9v6oK6D.png");
+
+    background-size:cover;
+    background-position:center;
+
+    opacity:0.10;
+
+    filter:
+    grayscale(100%)
+    brightness(1.2);
+
+    pointer-events:none;
+}
+
+/* sol abajo izquierda */
+.frase-romantica::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-40px;
+    left:-40px;
+
+    width:240px;
+    height:240px;
+
+    background:
+    url("https://i.imgur.com/l0K6G8K.png");
+
+    background-size:cover;
+    background-position:center;
+
+    opacity:0.10;
+
+    filter:
+    grayscale(100%)
+    brightness(1.1);
+
+    pointer-events:none;
+}
+
+/* texto encima */
+.frase-romantica p{
+    position:relative;
+    z-index:2;
+}
+
+/* móvil */
+@media(max-width:768px){
+
+    .frase-romantica::before,
+    .frase-romantica::after{
+
+        width:140px;
+        height:140px;
+
+        opacity:0.08;
+    }
+
+}
