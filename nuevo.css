@@ -21,7 +21,6 @@ html{
 }
 
 body{
-
     background:
     radial-gradient(circle at top,
     #2d1650 0%,
@@ -30,9 +29,7 @@ body{
     #070b18 100%);
 
     color:white;
-
     overflow-x:hidden;
-
     position:relative;
 }
 
@@ -84,7 +81,6 @@ audio{
 }
 
 .stars::before{
-
     background-image:
     radial-gradient(2px 2px at 10% 20%, rgba(255,255,255,0.9), transparent),
     radial-gradient(2px 2px at 20% 70%, rgba(255,255,255,0.7), transparent),
@@ -100,7 +96,6 @@ audio{
 }
 
 .stars2::before{
-
     background-image:
     radial-gradient(4px 4px at 12% 35%, rgba(255,105,180,0.7), transparent),
     radial-gradient(4px 4px at 35% 20%, rgba(255,139,194,0.7), transparent),
@@ -110,15 +105,12 @@ audio{
 }
 
 @keyframes twinkle{
-
     from{
         opacity:0.4;
     }
-
     to{
         opacity:1;
     }
-
 }
 
 /* ======================================== */
@@ -134,23 +126,17 @@ audio{
 }
 
 .glow1{
-
     width:300px;
     height:300px;
-
     background:rgba(255,80,170,0.16);
-
     top:-120px;
     left:-120px;
 }
 
 .glow2{
-
     width:300px;
     height:300px;
-
     background:rgba(170,120,255,0.14);
-
     bottom:-120px;
     right:-120px;
 }
@@ -174,49 +160,34 @@ footer{
 /* ======================================== */
 
 nav{
-
     position:fixed;
-
     top:0;
     left:0;
-
     width:100%;
-
     padding:18px 8%;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     background:rgba(22,15,45,0.88);
-
     backdrop-filter:blur(18px);
-
     z-index:1000;
 }
 
 .logo{
-
     font-size:24px;
     font-weight:700;
-
     color:#ffb4db;
 }
 
 nav ul{
-
     display:flex;
     gap:30px;
-
     list-style:none;
 }
 
 nav ul li a{
-
     text-decoration:none;
-
     color:#fff4fb;
-
     transition:0.3s;
 }
 
@@ -229,27 +200,19 @@ nav ul li a:hover{
 /* ======================================== */
 
 .music-icon{
-
     width:46px;
     height:46px;
-
     border-radius:50%;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     background:rgba(255,255,255,0.08);
-
     cursor:pointer;
-
     transition:0.3s;
 }
 
 .music-icon:hover{
-
     background:#ff8bc2;
-
     transform:scale(1.08);
 }
 
@@ -258,9 +221,7 @@ nav ul li a:hover{
 /* ======================================== */
 
 .hero{
-
     padding:160px 20px 90px;
-
     text-align:center;
 }
 
@@ -270,17 +231,11 @@ nav ul li a:hover{
 }
 
 .hero-tag{
-
     display:inline-block;
-
     margin-bottom:25px;
-
     padding:12px 28px;
-
     border-radius:50px;
-
     background:rgba(255,255,255,0.06);
-
     color:#ffb4db;
 }
 
@@ -289,12 +244,9 @@ nav ul li a:hover{
 }
 
 .linea-decorativa{
-
     width:220px;
     height:2px;
-
-    margin:14px auto;
-
+    margin: 35px auto; /* 🛠️ Ajustado para una transición más suave y equilibrada */
     background:
     linear-gradient(
     to right,
@@ -304,73 +256,29 @@ nav ul li a:hover{
 }
 
 .titulo-romantico h1{
-
     font-size:72px;
-
     line-height:1.15;
 }
 
 .titulo-romantico h1 span{
-
     display:block;
-
     color:#ffb6d9;
-
     font-size:78px;
-
     font-family:'Dancing Script',cursive;
 }
 
 .mini-heart{
-
     margin-top:10px;
-
     font-size:34px;
-
     color:#ff9fcf;
 }
 
 .hero-texto{
-
     max-width:760px;
-
     margin:0 auto 35px;
-
     font-size:22px;
-
     line-height:1.8;
-
     color:#f5d7e8;
-}
-
-/* ======================================== */
-/* 💖 FRASE */
-/* ======================================== */
-
-.frase-romantica{
-
-    margin-top:25px;
-
-    padding:45px 35px;
-
-    border-radius:35px;
-
-    background:rgba(255,255,255,0.06);
-
-    border:1px solid rgba(255,255,255,0.08);
-
-    backdrop-filter:blur(18px);
-}
-
-.frase-romantica p{
-
-    font-family:'Dancing Script',cursive;
-
-    font-size:38px;
-
-    line-height:1.7;
-
-    color:#ffd1ea;
 }
 
 /* ======================================== */
@@ -382,21 +290,15 @@ nav ul li a:hover{
 }
 
 .section-line{
-
     width:130px;
     height:4px;
-
     margin:0 auto 50px;
-
     border-radius:50px;
-
     background:#ff8bc2;
 }
 
 .moments-title{
-
     text-align:center;
-
     margin-bottom:70px;
 }
 
@@ -405,37 +307,26 @@ nav ul li a:hover{
 }
 
 /* ======================================== */
-/* 🌸 TARJETAS */
+/* 🌸 TARJETAS (CORREGIDAS Y ALINEADAS) */
 /* ======================================== */
 
 .cards{
-
     display:grid;
-
     grid-template-columns:repeat(4,1fr);
-
     gap:30px;
+    align-items:stretch; /* Garantiza que todas tengan la misma altura */
 }
 
 .card{
-
     background:rgba(255,255,255,0.05);
-
     border:1px solid rgba(255,255,255,0.08);
-
     border-radius:30px;
-
     padding:35px 25px;
-
     text-align:center;
-
     min-height:340px;
-
     display:flex;
     flex-direction:column;
-    justify-content:space-between;
-    align-items:center;
-
+    justify-content:flex-start; /* Alinea los elementos desde arriba de forma uniforme */
     transition:0.3s;
 }
 
@@ -444,46 +335,42 @@ nav ul li a:hover{
 }
 
 .circle{
-
     width:80px;
     height:80px;
-
     border-radius:50%;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     background:linear-gradient(135deg,#ff8bc2,#ff5ea8);
-
     font-size:30px;
-
     margin-bottom:20px;
+    flex-shrink: 0;
 }
 
 .card h3{
-
     font-size:22px;
-
     margin-bottom:18px;
-
     color:#fff4fb;
+    min-height:60px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .card span{
-
     color:#e7e7e7;
-
     line-height:1.8;
+    flex-grow:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .heart-small{
-
     margin-top:20px;
-
     color:#ff8bc2;
-
     font-size:24px;
+    flex-shrink: 0;
 }
 
 /* ======================================== */
@@ -491,9 +378,7 @@ nav ul li a:hover{
 /* ======================================== */
 
 .question{
-
     padding:100px 20px;
-
     text-align:center;
 }
 
@@ -502,56 +387,38 @@ nav ul li a:hover{
 }
 
 .question-sub{
-
     margin:30px auto;
-
     max-width:700px;
-
     color:#dddddd;
-
     line-height:1.8;
 }
 
 .buttons{
-
     display:flex;
     justify-content:center;
     align-items:center;
     gap:25px;
-
     flex-wrap:wrap;
 }
 
 .buttons button{
-
     padding:18px 55px;
-
     border:none;
-
     border-radius:60px;
-
     background:rgba(255,255,255,0.08);
-
     color:white;
-
     font-size:18px;
-
     cursor:pointer;
-
     transition:0.3s;
 }
 
 .buttons button:hover{
-
     background:#ff8bc2;
-
     transform:scale(1.05);
 }
 
 .question-text{
-
     margin-top:20px;
-
     color:#ffb4db;
 }
 
@@ -564,35 +431,23 @@ nav ul li a:hover{
 }
 
 .music-box{
-
     max-width:900px;
-
     margin:auto;
-
     padding:45px;
-
     border-radius:35px;
-
     background:rgba(255,255,255,0.05);
-
     border:1px solid rgba(255,255,255,0.08);
 }
 
 .music-box h2{
-
     text-align:center;
-
     font-size:34px;
-
     margin-bottom:15px;
 }
 
 .music-subtitle{
-
     text-align:center;
-
     margin-bottom:40px;
-
     color:#ffb4db;
 }
 
@@ -601,39 +456,27 @@ nav ul li a:hover{
 /* ======================================== */
 
 .player{
-
     background:rgba(255,255,255,0.04);
-
     border:1px solid rgba(255,255,255,0.08);
-
     border-radius:28px;
-
     padding:25px;
-
     display:flex;
     align-items:center;
     gap:25px;
-
     flex-wrap:wrap;
 }
 
 .cover{
-
     width:110px;
     height:110px;
-
     border-radius:20px;
-
     overflow:hidden;
-
     flex-shrink:0;
 }
 
 .cover img{
-
     width:100%;
     height:100%;
-
     object-fit:cover;
 }
 
@@ -642,18 +485,14 @@ nav ul li a:hover{
 }
 
 .top-info{
-
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     margin-bottom:18px;
 }
 
 .top-info h3{
-
     font-size:24px;
-
     margin-bottom:6px;
 }
 
@@ -662,50 +501,36 @@ nav ul li a:hover{
 }
 
 .heart-player{
-
     font-size:28px;
-
     color:#ff8bc2;
 }
 
 .bar{
-
     width:100%;
     height:6px;
-
     background:#3b3b52;
-
     border-radius:50px;
-
     overflow:hidden;
-
     margin-bottom:12px;
 }
 
 .progress{
-
     width:55%;
     height:100%;
-
     background:#ff8bc2;
 }
 
 .time{
-
     display:flex;
     justify-content:space-between;
-
     margin-bottom:22px;
-
     color:#d7d7d7;
 }
 
 .controls{
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     gap:24px;
 }
 
@@ -714,17 +539,107 @@ nav ul li a:hover{
 }
 
 .play{
-
     width:60px;
     height:60px;
-
     border-radius:50%;
-
     background:#ff8bc2;
-
     display:flex;
     justify-content:center;
     align-items:center;
+}
+
+/* ======================================== */
+/* 🌙 FRASE ROMÁNTICA ELEGANTE */
+/* ======================================== */
+
+.frase-romantica{
+    position:relative;
+    overflow:hidden;
+    padding:60px 55px;
+    border-radius:35px;
+    background:
+    linear-gradient(
+    135deg,
+    rgba(35,20,65,0.92),
+    rgba(25,15,50,0.92));
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(18px);
+    isolation:isolate;
+}
+
+/* ✨ IMAGEN DE FONDO SUAVE */
+.frase-romantica::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:url("sol-luna.png");
+    background-size:cover;
+    background-position:center;
+    opacity:0.28;
+    filter:
+    blur(1px)
+    brightness(0.75);
+    z-index:1;
+    pointer-events:none;
+}
+
+/* ✨ OSCURECER CENTRO */
+.frase-romantica::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    radial-gradient(
+    circle at center,
+    rgba(15,10,30,0.10) 0%,
+    rgba(15,10,30,0.45) 60%,
+    rgba(10,8,20,0.70) 100%);
+    z-index:2;
+    pointer-events:none;
+}
+
+/* ✨ TEXTO */
+.frase-romantica p{
+    position:relative;
+    z-index:3;
+    font-family:'Dancing Script',cursive;
+    font-size:38px;
+    line-height:2;
+    color:#fff1f7;
+    text-shadow:
+    0 2px 12px rgba(0,0,0,0.55),
+    0 0 18px rgba(0,0,0,0.35);
+}
+
+/* ======================================== */
+/* 🌸 DEDICATORIA FINAL */
+/* ======================================== */
+
+.dedicatoria-contenedor {
+    max-width: 600px;
+    margin: 35px auto 30px auto; /* 🛠️ Reducido para acoplarse con la simetría visual */
+    text-align: center;
+    padding: 0 20px;
+}
+
+.frase-poetica {
+    color: #f2f2f2;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.firma-final {
+    margin-top: 40px; /* 🛠️ Espacio óptimo para separar de la última línea */
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.firma-final p {
+    color: #d7d7d7;
+    font-size: 1rem;
 }
 
 /* ======================================== */
@@ -732,11 +647,8 @@ nav ul li a:hover{
 /* ======================================== */
 
 footer{
-
     text-align:center;
-
     padding:25px 20px;
-
     color:#d7d7d7;
 }
 
@@ -745,15 +657,21 @@ footer{
 /* ======================================== */
 
 @media(max-width:1200px){
-
     .cards{
         grid-template-columns:repeat(2,1fr);
     }
+}
 
+@media(max-width:900px){
+    .frase-romantica{
+        padding:50px 35px;
+    }
+    .frase-romantica p{
+        font-size:31px;
+    }
 }
 
 @media(max-width:768px){
-
     nav{
         flex-direction:column;
         gap:18px;
@@ -777,8 +695,17 @@ footer{
         font-size:46px;
     }
 
+    .frase-romantica{
+        padding:40px 25px;
+    }
+
+    .frase-romantica::before{
+        opacity:0.18;
+    }
+
     .frase-romantica p{
         font-size:24px;
+        line-height:1.8;
     }
 
     .cards{
@@ -798,11 +725,9 @@ footer{
         flex-direction:column;
         gap:12px;
     }
-
 }
 
 @media(max-width:480px){
-
     .titulo-romantico h1{
         font-size:30px;
     }
@@ -819,172 +744,12 @@ footer{
         width:100%;
     }
 
-}
-
-/* ======================================== */
-/* ✅ ALINEAR TARJETAS */
-/* ======================================== */
-
-.cards{
-    align-items:stretch;
-}
-
-.card{
-
-    display:flex;
-    flex-direction:column;
-
-    justify-content:flex-start;
-}
-
-.card h3{
-
-    min-height:60px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.card span{
-
-    flex-grow:1;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-
-/* ======================================== */
-/* 🌙 FRASE ROMÁNTICA ELEGANTE */
-/* ======================================== */
-
-.frase-romantica{
-
-    position:relative;
-    overflow:hidden;
-
-    padding:60px 55px;
-
-    border-radius:35px;
-
-    background:
-    linear-gradient(
-    135deg,
-    rgba(35,20,65,0.92),
-    rgba(25,15,50,0.92));
-
-    border:1px solid rgba(255,255,255,0.08);
-
-    backdrop-filter:blur(18px);
-
-    isolation:isolate;
-}
-
-/* ✨ IMAGEN DE FONDO SUAVE */
-
-.frase-romantica::before{
-
-    content:"";
-
-    position:absolute;
-    inset:0;
-
-    background-image:url("sol-luna.png");
-
-    background-size:cover;
-    background-position:center;
-
-    opacity:0.28;
-
-    filter:
-    blur(1px)
-    brightness(0.75);
-
-    z-index:1;
-
-    pointer-events:none;
-}
-
-/* ✨ OSCURECER CENTRO */
-/* AYUDA A QUE EL TEXTO RESPIRE */
-
-.frase-romantica::after{
-
-    content:"";
-
-    position:absolute;
-    inset:0;
-
-    background:
-    radial-gradient(
-    circle at center,
-    rgba(15,10,30,0.10) 0%,
-    rgba(15,10,30,0.45) 60%,
-    rgba(10,8,20,0.70) 100%);
-
-    z-index:2;
-
-    pointer-events:none;
-}
-
-/* ✨ TEXTO */
-
-.frase-romantica p{
-
-    position:relative;
-
-    z-index:3;
-
-    font-family:'Dancing Script',cursive;
-
-    font-size:38px;
-
-    line-height:2;
-
-    color:#fff1f7;
-
-    text-shadow:
-    0 2px 12px rgba(0,0,0,0.55),
-    0 0 18px rgba(0,0,0,0.35);
-}
-
-/* 📱 TABLET */
-
-@media(max-width:900px){
-
-    .frase-romantica{
-
-        padding:50px 35px;
+    .frase-poetica {
+        font-size: 1rem;
+        line-height: 1.7;
     }
-
-    .frase-romantica p{
-
-        font-size:31px;
+    
+    .dedicatoria-contenedor {
+        margin: 30px auto 20px auto;
     }
-
-}
-
-/* 📱 MÓVIL */
-
-@media(max-width:768px){
-
-    .frase-romantica{
-
-        padding:40px 25px;
-    }
-
-    .frase-romantica::before{
-
-        opacity:0.18;
-    }
-
-    .frase-romantica p{
-
-        font-size:24px;
-
-        line-height:1.8;
-    }
-
 }
